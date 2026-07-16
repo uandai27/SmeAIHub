@@ -1,0 +1,133 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden">
+      <Container className="grid items-center gap-20 py-28 lg:grid-cols-[1fr_1.15fr]">
+        <div className="max-w-xl lg:pl-8">
+          <Badge className="mb-6">
+            AI agents for modern service businesses
+          </Badge>
+
+          <h1 className="max-w-2xl text-5xl font-semibold leading-tight tracking-[-0.04em] lg:text-6xl">
+            Turn every customer conversation into business growth.
+          </h1>
+
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
+            SmeAIHub helps restaurants, hotels, spas, and service businesses
+            understand customer feedback, respond across languages, and convert
+            more conversations into bookings.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Button href="#diagnosis">Get a Free AI Diagnosis</Button>
+
+            <Button href="#demo" variant="secondary">
+              Book a Demo
+            </Button>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-neutral-200 bg-neutral-950 p-4 shadow-2xl shadow-neutral-200">
+          <div className="rounded-2xl border border-white/10 bg-neutral-900 p-6 text-white">
+            <div className="flex items-center justify-between border-b border-white/10 pb-5">
+              <div>
+                <p className="text-sm text-neutral-400">AI Review Diagnosis</p>
+                <p className="mt-1 text-lg font-medium">
+                  Customer Experience Overview
+                </p>
+              </div>
+
+              <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
+                Live analysis
+              </span>
+            </div>
+
+            <div className="grid gap-4 py-6 sm:grid-cols-2">
+              <MetricCard
+                label="Opportunity score"
+                value="82"
+                description="out of 100"
+              />
+
+              <MetricCard
+                label="Missed opportunities"
+                value="24"
+                description="per month"
+              />
+            </div>
+
+            <div className="rounded-2xl bg-white/5 p-5">
+              <p className="text-sm text-neutral-400">
+                Top customer experience issues
+              </p>
+
+              <div className="mt-5 divide-y divide-white/10 text-sm">
+                <IssueRow
+                  issue="Slow response to booking inquiries"
+                  impact="High impact"
+                  impactClassName="text-amber-300"
+                />
+
+                <IssueRow
+                  issue="Incomplete multilingual information"
+                  impact="High impact"
+                  impactClassName="text-amber-300"
+                />
+
+                <IssueRow
+                  issue="Repeated complaints about waiting time"
+                  impact="Medium"
+                  impactClassName="text-neutral-400"
+                />
+              </div>
+            </div>
+
+            <p className="mt-4 text-xs text-neutral-500">Product preview</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+type MetricCardProps = {
+  label: string;
+  value: string;
+  description: string;
+};
+
+function MetricCard({
+  label,
+  value,
+  description,
+}: MetricCardProps) {
+  return (
+    <div className="rounded-2xl bg-white/5 p-5">
+      <p className="text-sm text-neutral-400">{label}</p>
+      <p className="mt-3 text-4xl font-semibold">{value}</p>
+      <p className="mt-1 text-sm text-neutral-500">{description}</p>
+    </div>
+  );
+}
+
+type IssueRowProps = {
+  issue: string;
+  impact: string;
+  impactClassName: string;
+};
+
+function IssueRow({
+  issue,
+  impact,
+  impactClassName,
+}: IssueRowProps) {
+  return (
+    <div className="flex items-center justify-between gap-5 py-4 first:pt-0 last:pb-0">
+      <span>{issue}</span>
+      <span className={`shrink-0 ${impactClassName}`}>{impact}</span>
+    </div>
+  );
+}
