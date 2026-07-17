@@ -260,3 +260,27 @@ Highlights:
 - Trust-first design
 - Responsive partner cards
 - Production-ready logo placeholder system
+## Milestone 3.2 — Business Workflow
+
+### Overall Rating
+9.7 / 10 ⭐⭐⭐⭐⭐
+
+### What's New
+
+- Introduced the Business Workflow section.
+- Added a four-step AI business workflow.
+- Improved visual consistency with rounded icon containers.
+- Added card hover animations and unified card height.
+- Fully responsive across desktop, tablet, and mobile.
+
+### Strengths
+
+- Clear storytelling from trust to workflow.
+- Strong SaaS visual language.
+- Excellent responsive behavior.
+- Consistent spacing and typography.
+
+### Future Polish
+
+- Consider workflow connectors or arrows during the Brand Identity phase.
+- Further refine icon border weight and vertical spacing.

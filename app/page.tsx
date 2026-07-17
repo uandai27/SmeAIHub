@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/marketing/hero";
 import { TrustedBy } from "@/components/marketing/trusted-by";
+import { Workflow } from "@/components/marketing/workflow";
 import { Solutions } from "@/components/marketing/solutions";
 import { Industries } from "@/components/marketing/industries";
 import { PlatformPreview } from "@/components/marketing/platform/platform-preview";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <TrustedBy />
+        <Workflow />
         <Solutions />
         <Industries />
         <PlatformPreview />
