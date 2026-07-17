@@ -1,11 +1,22 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/marketing/hero";
+import { Solutions } from "@/components/marketing/solutions";
+import { Industries } from "@/components/marketing/industries";
+import { PlatformPreview } from "@/components/marketing/platform/platform-preview";
+import { PricingPreview } from "@/components/marketing/pricing-preview";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white text-neutral-950">
+    <>
       <Navbar />
-      <Hero />
-    </main>
+
+      <main>
+        <Hero />
+        <Solutions />
+        <Industries />
+        <PlatformPreview />
+        <PricingPreview />
+      </main>
+    </>
   );
 }

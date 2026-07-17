@@ -5,13 +5,13 @@ import { Container } from "@/components/ui/container";
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <Container className="grid items-center gap-20 py-28 lg:grid-cols-[1fr_1.15fr]">
+      <Container className="grid items-center gap-12 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-20 lg:py-28">
         <div className="max-w-xl lg:pl-8">
           <Badge className="mb-6">
             AI agents for modern service businesses
           </Badge>
 
-          <h1 className="max-w-2xl text-5xl font-semibold leading-tight tracking-[-0.04em] lg:text-6xl">
+          <h1 className="max-w-2xl text-[3.25rem] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-6xl">
             Turn every customer conversation into business growth.
           </h1>
 
