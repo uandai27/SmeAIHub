@@ -37,3 +37,15 @@ Highlights:
 - Added AI use cases for each industry
 - Refined information hierarchy and spacing
 - Improved product messaging toward industry solutions
+## 2026-07-17
+
+### Milestone 3.4 — Pricing
+
+Enhanced the Pricing section to better reflect SmeAIHub's enterprise-focused positioning.
+
+Highlights:
+- Refined pricing copy and messaging
+- Renamed "Multi-location" plan to "Enterprise"
+- Improved plan hierarchy (Starter → Growth → Enterprise)
+- Refined enterprise positioning and descriptions
+- Updated pricing footer messaging

@@ -27,9 +27,9 @@ const plans = [
     featured: true,
   },
   {
-    name: "Multi-location",
+    name: "Enterprise",
     description:
-      "For restaurant groups, hotel groups, spa chains, and regional service operators.",
+      "For organizations that require centralized AI operations, advanced workflows, and custom integrations.",
     features: [
       "Multiple locations",
       "Shared workspace",
@@ -53,8 +53,7 @@ export function PricingPreview() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
-              Flexible plans for independent businesses, growing teams, and
-              multi-location operators. Final pricing is tailored to your
+              Flexible plans for businesses at every stage of growth, from single locations to enterprise operations. Final pricing is tailored to your
               locations, channels, and usage.
             </p>
           </div>
@@ -156,9 +155,9 @@ export function PricingPreview() {
         </div>
 
         <p className="mt-8 text-sm leading-6 text-neutral-500">
-          Pricing shown here is a plan structure preview. Final pricing will be
-          confirmed after pilot deployments and usage analysis.
-        </p>
+  Every plan is tailored to your locations, customer channels, workflows, and
+  expected usage.
+</p>
       </Container>
     </section>
   );
