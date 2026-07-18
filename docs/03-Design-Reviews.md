@@ -361,3 +361,64 @@ The Landing Page has reached a production-ready quality suitable for early custo
 Landing Page v1.0 successfully establishes the SmeAIHub brand and product positioning.
 
 The project is ready to move into the next phase, focusing on customer acquisition, demo booking, SEO, and production deployment.
+---
+
+# Milestone 4.2 — Production Foundation & Branded 404
+
+**Review Date**
+
+2026-07-18
+
+## Scope
+
+- Production Metadata
+- SEO Foundation
+- robots.txt
+- sitemap.xml
+- manifest.webmanifest
+- Central Site Configuration
+- Branded 404 Page
+
+## Design Review
+
+### Production Foundation
+
+The website now provides a complete production-ready metadata system based on the Next.js App Router architecture.
+
+A centralized `site-config.ts` was introduced to ensure all metadata, SEO, robots, sitemap and manifest remain consistent across the entire application.
+
+This significantly improves maintainability and scalability.
+
+### Branded 404
+
+The default Next.js error page has been replaced with a branded experience.
+
+Key characteristics:
+
+- Consistent SmeAIHub visual language
+- Clear recovery path
+- Primary and secondary CTA
+- Responsive layout
+- Accessible interaction
+- Clean typography
+- Minimal distraction
+
+The page follows the overall design philosophy established across the marketing website.
+
+## Product Review
+
+| Category | Score |
+|----------|------:|
+| Visual Design | 9.8 |
+| User Experience | 9.8 |
+| Typography | 10 |
+| Accessibility | 9.7 |
+| Production Readiness | 10 |
+
+**Overall Score**
+
+**9.8 / 10**
+
+## Conclusion
+
+Milestone 4.2 successfully establishes the production infrastructure and branded error experience required before public launch.

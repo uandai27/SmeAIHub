@@ -1,3 +1,22 @@
+# v0.5.0 (In Progress)
+
+## Added
+
+- Central site configuration
+- Production metadata
+- SEO foundation
+- robots.txt
+- sitemap.xml
+- Web App Manifest
+- Branded 404 page
+
+## Improved
+
+- Production readiness
+- Search engine compatibility
+- Website maintainability
+- Brand consistency
+
 Added Platform Preview
 
 Added Dashboard Preview
