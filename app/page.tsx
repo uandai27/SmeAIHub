@@ -6,6 +6,7 @@ import { Solutions } from "@/components/marketing/solutions";
 import { Industries } from "@/components/marketing/industries";
 import { PlatformPreview } from "@/components/marketing/platform/platform-preview";
 import { PricingPreview } from "@/components/marketing/pricing-preview";
+import { About } from "@/components/marketing/about";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Industries />
         <PlatformPreview />
         <PricingPreview />
+        <About />
       </main>
     </>
   );

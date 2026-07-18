@@ -10,5 +10,5 @@ Milestone 2
 | Business Workflow | ✅ |
 | Industries | ✅ |
 | Pricing | ✅ |
-| About | ⬜ |
+| About | ✅ |
 | Final Polish | ⬜ |

@@ -49,3 +49,14 @@ Highlights:
 - Improved plan hierarchy (Starter → Growth → Enterprise)
 - Refined enterprise positioning and descriptions
 - Updated pricing footer messaging
+## 2026-07-17
+
+### Milestone 3.5 — About
+
+Introduced the About section to communicate SmeAIHub's brand philosophy.
+
+Highlights:
+- Added About section
+- Introduced responsive two-column layout
+- Added three core principles with supporting descriptions
+- Improved brand messaging and information hierarchy
