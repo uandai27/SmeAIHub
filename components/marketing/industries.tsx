@@ -6,18 +6,33 @@ const industries = [
     description:
       "Answer menu questions, respond to customer feedback, support reservations, and turn more inquiries into visits.",
     eyebrow: "Dining & hospitality",
+  useCases: [
+    "Menu assistance",
+    "Reservation support",
+    "Customer feedback",
+  ],
   },
   {
     title: "Hotels",
     description:
       "Support international guests before, during, and after their stay with fast, consistent, multilingual service.",
     eyebrow: "Guest experience",
+  useCases: [
+  "Guest inquiries",
+  "Multilingual support",
+  "Check-in guidance",
+],
   },
   {
     title: "Spas & Wellness",
     description:
       "Explain services, capture booking intent, reduce missed appointments, and provide a smoother customer journey.",
     eyebrow: "Appointments & care",
+  useCases: [
+  "Treatment information",
+  "Appointment booking",
+  "Follow-up reminders",
+],
   },
 ];
 
@@ -56,20 +71,29 @@ export function Industries() {
                 <p className="mt-5 leading-7 text-neutral-600">
                   {industry.description}
                 </p>
+                <ul className="mt-10 space-y-3">
+  {industry.useCases.map((useCase) => (
+    <li
+      key={useCase}
+      className="flex items-center gap-3 text-sm text-neutral-700"
+    >
+      <span
+  aria-hidden="true"
+  className="text-neutral-900"
+>
+  ✓
+</span>
+      {useCase}
+    </li>
+  ))}
+</ul>
               </div>
 
-              <div className="mt-12 flex items-center justify-between border-t border-neutral-200 pt-6">
-                <span className="text-sm font-medium text-neutral-950">
-                  Explore solutions
-                </span>
-
-                <span
-                  aria-hidden="true"
-                  className="text-xl text-neutral-400 transition group-hover:translate-x-1 group-hover:text-neutral-950"
-                >
-                  →
-                </span>
-              </div>
+              <div className="mt-12 border-t border-neutral-200 pt-6">
+  <span className="text-sm font-medium text-neutral-950">
+    Purpose-built AI workflows
+  </span>
+</div>
             </article>
           ))}
         </div>
