@@ -141,3 +141,66 @@ Social Media
 Presentation
 
 Business Card
+# Logo Mark v1.0
+
+Status: ✅ Approved
+
+## Concept
+
+Four Business Modules
+
+↓
+
+Central AI Hub
+
+↓
+
+Business Orchestration
+
+## Brand Principles
+
+- Monochrome First
+- Business Before AI
+- Modular
+- Minimal
+- Timeless
+- SVG First
+
+## Wordmark
+
+SmeAIHub
+
+Typography
+
+- Sme — SemiBold
+- AI — Bold
+- Hub — SemiBold
+
+No color differentiation.
+
+## Usage
+
+Logo Mark
+
+- Navbar
+- Footer
+- 404
+- Browser
+- PWA
+- App Icon
+
+## Colors
+
+Black
+
+#111111
+
+White
+
+#FFFFFF
+
+## Current Version
+
+Logo Mark v1.0
+
+Approved
