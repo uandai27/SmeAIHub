@@ -7,6 +7,7 @@ import { Industries } from "@/components/marketing/industries";
 import { PlatformPreview } from "@/components/marketing/platform/platform-preview";
 import { PricingPreview } from "@/components/marketing/pricing-preview";
 import { About } from "@/components/marketing/about";
+import { Footer } from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
         <PlatformPreview />
         <PricingPreview />
         <About />
+        <Footer />
       </main>
     </>
   );
