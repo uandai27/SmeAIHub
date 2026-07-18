@@ -93,3 +93,16 @@ SmeAIHub only displays verifiable trust signals.
 - Do not publish fabricated testimonials, customer counts, ratings, or business outcomes.
 - Official partner logos should only be used after receiving the appropriate brand assets and permission.
 - Until official assets are available, the interface must remain production-ready using graceful placeholders.
+
+Visual hierarchy over visual quantity.
+## Decision — Early Partner Logo Display
+
+Real customer logos should always preserve their original aspect ratio.
+
+Guidelines:
+- SVG preferred whenever available.
+- PNG with transparent background is acceptable.
+- Never stretch or crop customer logos.
+- Keep logo presentation consistent by constraining the display area rather than modifying the logo itself.
+
+This ensures visual consistency while respecting each partner's brand identity.
