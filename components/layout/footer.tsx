@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { CookieSettingsButton } from "@/components/analytics/cookie-settings-button";
 import { Container } from "@/components/ui/container";
 
 const navigation = [
-  { name: "Solutions", href: "#solutions" },
-  { name: "Industries", href: "#industries" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "About", href: "#about" },
+  { name: "Solutions", href: "/#solutions" },
+  { name: "Industries", href: "/#industries" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "About", href: "/#about" },
 ];
 
 export function Footer() {
@@ -67,9 +68,27 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-2 border-t border-neutral-200 pt-6 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 SmeAIHub. All rights reserved.</p>
 
-          <p className="text-neutral-400">
-            AI built for real business growth.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/privacy"
+              className="text-neutral-500 transition hover:text-neutral-950"
+            >
+              Privacy
+            </Link>
+
+            <Link
+              href="/terms"
+              className="text-neutral-500 transition hover:text-neutral-950"
+            >
+              Terms
+            </Link>
+
+            <CookieSettingsButton />
+
+            <p className="text-neutral-400">
+              AI built for real business growth.
+            </p>
+          </div>
         </div>
       </Container>
     </footer>

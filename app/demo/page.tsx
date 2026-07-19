@@ -33,10 +33,10 @@ export default function DemoPage() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-neutral-600">
-                Answer a few questions and receive a personalized AI opportunity assessment tailored to your business.
-
-Our team will identify practical ways AI can improve operations, customer experience, and business growth.
-              </p>
+  Answer a few questions and receive a personalized AI opportunity
+  assessment tailored to your business. Our team will identify practical
+  ways AI can improve operations, customer experience, and business growth.
+</p>
 
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-500">
                 <span>No commitment</span>

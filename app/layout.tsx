@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -96,7 +97,10 @@ export default function RootLayout({
       lang={siteConfig.language}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <AnalyticsConsent />
+      </body>
     </html>
   );
 }
