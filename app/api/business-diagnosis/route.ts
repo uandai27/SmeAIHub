@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const businessTypes = new Set([
   "Restaurant",
   "Hotel",
@@ -134,6 +132,8 @@ export async function POST(request: Request) {
       console.error("RESEND_API_KEY is not configured.");
       return NextResponse.json({ success: false }, { status: 500 });
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const safe = {
       name: escapeHtml(diagnosis.name),
