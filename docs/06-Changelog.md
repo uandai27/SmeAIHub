@@ -265,3 +265,11 @@ Highlights:
 - Regenerated the Hero screenshot, Build Week cover, Demo Video, narration, and captions with the verified model name.
 - Preserved the distinction between GPT-5.6 Sol/Codex-assisted development and the current deterministic diagnosis runtime.
 - The repository requires an explicit license choice and confirmed public or judge access.
+
+#### Step 3 — Public YouTube Demo
+
+**Published**
+
+- Published the final 1 minute 40 second Build Week Demo as a public YouTube video.
+- Added the canonical public URL, `https://youtu.be/iRyJbM6pD50`, to the README and Submission Package.
+- Marked the public-video upload and YouTube-link requirements as complete.

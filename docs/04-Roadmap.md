@@ -108,6 +108,6 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Submission links and media checklist
 - [x] Verify GPT-5.6 Sol usage from the Codex Session record
 - [ ] Confirm and add the `/feedback` Session ID
-- [ ] Upload public YouTube Demo
+- [x] Upload public YouTube Demo
 - [ ] Add repository license and confirm judging access
 - [ ] Final submission review

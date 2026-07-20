@@ -12,8 +12,8 @@
 
 The following items must be completed or confirmed before submitting:
 
-- [ ] Upload the Demo video as a public, under-three-minute YouTube video.
-- [ ] Replace `[YOUTUBE_URL]` with the public video URL.
+- [x] Upload the Demo video as a public, under-three-minute YouTube video.
+- [x] Add the public YouTube URL to the submission package and README.
 - [ ] Retrieve and enter the primary Codex `/feedback` Session ID.
 - [x] Verify the core build Session model as GPT-5.6 Sol from its recorded `turn_context` history.
 - [x] Align the Hero badge, cover, README, video narration, and submission copy to `GPT-5.6 Sol`.
@@ -169,7 +169,7 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - Live website: https://smeaihub.ai
 - Live Demo: https://smeaihub.ai/demo
 - Repository: https://github.com/uandai27/SmeAIHub
-- Public YouTube Demo: `[YOUTUBE_URL]`
+- Public YouTube Demo: https://youtu.be/iRyJbM6pD50
 - Primary Codex `/feedback` Session ID: `[CODEX_SESSION_ID]`
 
 ## Media Checklist
@@ -184,7 +184,7 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 
 - [ ] Project works from the public website.
 - [ ] Public Demo completes without unintended email or analytics test data.
-- [ ] YouTube video is public, under three minutes, and has intelligible audio.
+- [x] YouTube video is public, under three minutes, and has intelligible audio.
 - [x] Video audio accurately covers verified Codex and GPT-5.6 Sol usage.
 - [ ] Repository access and license satisfy the official requirements.
 - [ ] README includes setup instructions and explains how Codex accelerated the build.

@@ -49,7 +49,7 @@ The Build Week prototype delivers a complete diagnosis journey:
 
 ### Demo video
 
-[Watch the 1 minute 40 second Build Week product demo](./public/submission/smeaihub-build-week-demo.mp4) · [Download captions](./public/submission/smeaihub-build-week-demo.srt)
+[Watch the public 1 minute 40 second Build Week product demo on YouTube](https://youtu.be/iRyJbM6pD50) · [Download captions](./public/submission/smeaihub-build-week-demo.srt) · [Download the source video](./public/submission/smeaihub-build-week-demo.mp4)
 
 ## OpenAI, GPT-5.6 Sol, and Codex
 
