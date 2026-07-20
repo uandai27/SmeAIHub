@@ -111,5 +111,5 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Upload public YouTube Demo
 - [x] Add MIT License
 - [x] Confirm the production website and `/demo` are publicly reachable
-- [ ] Make the repository public or grant official judges access
+- [x] Make the repository public and verify anonymous judge access
 - [ ] Final submission review

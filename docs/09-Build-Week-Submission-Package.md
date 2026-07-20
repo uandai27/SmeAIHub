@@ -18,7 +18,7 @@ The following items must be completed or confirmed before submitting:
 - [x] Verify the core build Session model as GPT-5.6 Sol from its recorded `turn_context` history.
 - [x] Align the Hero badge, cover, README, video narration, and submission copy to `GPT-5.6 Sol`.
 - [x] Add the MIT License before public judging.
-- [ ] Confirm that the repository is public, or share the private repository with the official judging addresses.
+- [x] Confirm that the repository is public and anonymously reachable.
 - [x] Confirm that the live website and `/demo` are publicly reachable without credentials.
 - [ ] Complete the Devpost eligibility, team, and official-rules declarations.
 
@@ -187,10 +187,10 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - [ ] Public Demo completes without unintended email or analytics test data.
 - [x] YouTube video is public, under three minutes, and has intelligible audio.
 - [x] Video audio accurately covers verified Codex and GPT-5.6 Sol usage.
-- [ ] Repository access and license satisfy the official requirements.
-- [ ] README includes setup instructions and explains how Codex accelerated the build.
+- [x] Repository access and license satisfy the official requirements.
+- [x] README includes setup instructions and explains how Codex accelerated the build.
 - [x] `/feedback` Session ID is correct.
-- [ ] All Devpost links open in a signed-out browser.
+- [x] All prepared Devpost links open without authentication.
 - [ ] Submission copy does not overstate the current deterministic runtime.
 - [ ] Category is Work & Productivity.
 - [ ] Final preview has no placeholders.

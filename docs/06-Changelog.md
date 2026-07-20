@@ -285,4 +285,6 @@ Highlights:
 **Verified**
 
 - Confirmed that `https://smeaihub.ai` and `https://smeaihub.ai/demo` are publicly reachable without credentials.
-- Confirmed that the GitHub repository is currently private and still requires public visibility or explicit judge access before submission.
+- Changed the GitHub repository visibility from private to public.
+- Verified anonymous HTTP 200 access for the repository, MIT License, production homepage, live Demo, and YouTube Demo.
+- Confirmed the GitHub API reports `private: false`, `visibility: public`, and SPDX license `MIT`.
