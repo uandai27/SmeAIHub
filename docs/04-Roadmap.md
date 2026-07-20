@@ -69,3 +69,38 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [ ] Google Search Console
 - [ ] Final Lighthouse Review
 - [ ] Production Deployment
+
+## Milestone 5 — OpenAI Build Week Submission
+
+### ✅ 5.1 Build Week Hero
+
+- [x] AI-first hero messaging
+- [x] AI capability highlights
+- [x] AI opportunity snapshot
+
+### ✅ 5.2 AI Diagnosis Results Experience
+
+- [x] AI Thinking experience
+- [x] AI Diagnosis Results
+- [x] Industry-specific recommendations
+- [x] Strategy-session conversion path
+- [x] Start Another Diagnosis
+- [x] Results-aware supporting sidebar
+- [x] Desktop and mobile browser review
+- [x] ESLint and production build validation
+
+### ⏳ 5.3 Submission Assets
+
+- [ ] Hero screenshot
+- [ ] Diagnosis results screenshot
+- [ ] Open Graph and submission cover image
+- [ ] Demo video
+
+### ⏳ 5.4 Submission Package
+
+- [ ] One-line pitch
+- [ ] Product description
+- [ ] OpenAI usage explanation
+- [ ] Architecture overview
+- [ ] README submission edition
+- [ ] Final submission review
