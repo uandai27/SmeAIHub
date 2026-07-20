@@ -161,6 +161,10 @@ The Build Week submission is validated against ESLint, TypeScript, the Next.js p
 
 Project vision, design language, reviews, decisions, roadmap, and changelog are maintained in [`docs/`](./docs/README.md).
 
+## License
+
+SmeAIHub is released under the [MIT License](./LICENSE).
+
 ---
 
 **SmeAIHub** — every service business deserves an intelligent workforce.

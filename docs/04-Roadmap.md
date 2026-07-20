@@ -107,7 +107,9 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Judging-criteria alignment
 - [x] Submission links and media checklist
 - [x] Verify GPT-5.6 Sol usage from the Codex Session record
-- [ ] Confirm and add the `/feedback` Session ID
+- [x] Confirm and add the `/feedback` Session ID
 - [x] Upload public YouTube Demo
-- [ ] Add repository license and confirm judging access
+- [x] Add MIT License
+- [x] Confirm the production website and `/demo` are publicly reachable
+- [ ] Make the repository public or grant official judges access
 - [ ] Final submission review

@@ -273,3 +273,16 @@ Highlights:
 - Published the final 1 minute 40 second Build Week Demo as a public YouTube video.
 - Added the canonical public URL, `https://youtu.be/iRyJbM6pD50`, to the README and Submission Package.
 - Marked the public-video upload and YouTube-link requirements as complete.
+
+#### Step 4 — License and Judge Access Review
+
+**Added**
+
+- Added the MIT License with SmeAIHub as the 2026 copyright holder.
+- Added MIT license metadata to `package.json` and a License section to the README.
+- Recorded the verified primary and supporting Codex `/feedback` Session IDs.
+
+**Verified**
+
+- Confirmed that `https://smeaihub.ai` and `https://smeaihub.ai/demo` are publicly reachable without credentials.
+- Confirmed that the GitHub repository is currently private and still requires public visibility or explicit judge access before submission.

@@ -14,12 +14,12 @@ The following items must be completed or confirmed before submitting:
 
 - [x] Upload the Demo video as a public, under-three-minute YouTube video.
 - [x] Add the public YouTube URL to the submission package and README.
-- [ ] Retrieve and enter the primary Codex `/feedback` Session ID.
+- [x] Retrieve and enter the primary Codex `/feedback` Session ID.
 - [x] Verify the core build Session model as GPT-5.6 Sol from its recorded `turn_context` history.
 - [x] Align the Hero badge, cover, README, video narration, and submission copy to `GPT-5.6 Sol`.
-- [ ] Choose and add an appropriate repository license before public judging.
+- [x] Add the MIT License before public judging.
 - [ ] Confirm that the repository is public, or share the private repository with the official judging addresses.
-- [ ] Confirm that the live website and `/demo` are publicly reachable without credentials.
+- [x] Confirm that the live website and `/demo` are publicly reachable without credentials.
 - [ ] Complete the Devpost eligibility, team, and official-rules declarations.
 
 Do not submit until every item above has been resolved. The official challenge requires a working project, category, description, public Demo video, repository, README, and primary Codex Session ID.
@@ -170,7 +170,8 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - Live Demo: https://smeaihub.ai/demo
 - Repository: https://github.com/uandai27/SmeAIHub
 - Public YouTube Demo: https://youtu.be/iRyJbM6pD50
-- Primary Codex `/feedback` Session ID: `[CODEX_SESSION_ID]`
+- Primary Codex `/feedback` Session ID: `019f7dce-ba9d-7da2-8433-0f1e496f2ba7`
+- Supporting Codex `/feedback` Session ID: `019f7ae7-a301-7353-a184-8654f31b5034`
 
 ## Media Checklist
 
@@ -182,13 +183,13 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 
 ## Final Review Checklist
 
-- [ ] Project works from the public website.
+- [x] Project works from the public website.
 - [ ] Public Demo completes without unintended email or analytics test data.
 - [x] YouTube video is public, under three minutes, and has intelligible audio.
 - [x] Video audio accurately covers verified Codex and GPT-5.6 Sol usage.
 - [ ] Repository access and license satisfy the official requirements.
 - [ ] README includes setup instructions and explains how Codex accelerated the build.
-- [ ] `/feedback` Session ID is correct.
+- [x] `/feedback` Session ID is correct.
 - [ ] All Devpost links open in a signed-out browser.
 - [ ] Submission copy does not overstate the current deterministic runtime.
 - [ ] Category is Work & Productivity.
