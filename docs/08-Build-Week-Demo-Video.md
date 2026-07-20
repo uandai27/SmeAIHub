@@ -34,7 +34,7 @@ The video should show the complete journey from the business problem to an indus
 | 0:34–0:55 | Diagnosis form | Complete the prepared Restaurant example and submit. | Show the business context used to personalize the experience. |
 | 0:55–1:05 | AI Thinking | Let the full analysis state remain visible. Do not move the pointer. | Communicate a deliberate analysis workflow. |
 | 1:05–1:34 | Diagnosis Results | Pause on the score, then slowly reveal opportunities, impact metrics, and next steps. | Demonstrate the product value and industry-specific result. |
-| 1:34–1:49 | Results or architecture overlay | Keep the result visible while the OpenAI implementation statement appears as a short caption. | Explain GPT-5's current role and the planned runtime integration honestly. |
+| 1:34–1:49 | Results or architecture overlay | Keep the result visible while the OpenAI implementation statement appears as a short caption. | Explain GPT-5.6 Sol's current role and the planned runtime integration honestly. |
 | 1:49–2:00 | Build Week cover | Return to the cover with the website and closing statement. | End with the product vision and a memorable call to action. |
 
 ## Recording Data
@@ -83,7 +83,7 @@ The result is an industry-specific report. Harbor Table receives an AI readiness
 
 ### 1:34–1:49 — OpenAI
 
-SmeAIHub was designed and built with GPT-5 through Codex as a product and engineering collaborator. This Build Week prototype currently uses deterministic industry recommendations, keeping the demo predictable and business data out of the OpenAI runtime.
+SmeAIHub was designed and built with GPT-5.6 Sol through Codex as a product and engineering collaborator. This Build Week prototype currently uses deterministic industry recommendations, keeping the demo predictable and business data out of the OpenAI runtime.
 
 ### 1:49–2:00 — Vision
 
@@ -142,7 +142,7 @@ smeaihub.ai
 - A reviewer can identify the problem, audience, product flow, and value without additional context.
 - The complete Form → Thinking → Results journey is visible.
 - Restaurant-specific output is readable and matches the submitted example.
-- GPT-5/Codex usage and the current deterministic runtime are described accurately.
+- GPT-5.6 Sol/Codex usage and the current deterministic runtime are described accurately.
 - The OpenAI Responses API integration is presented as the next milestone, not as a current capability.
 - No personal data, secrets, test email, or analytics event is exposed.
 - The video ends with the SmeAIHub name, website, and product vision.

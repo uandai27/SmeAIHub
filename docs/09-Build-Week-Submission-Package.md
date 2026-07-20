@@ -15,8 +15,8 @@ The following items must be completed or confirmed before submitting:
 - [ ] Upload the Demo video as a public, under-three-minute YouTube video.
 - [ ] Replace `[YOUTUBE_URL]` with the public video URL.
 - [ ] Retrieve and enter the primary Codex `/feedback` Session ID.
-- [ ] Confirm that the core build session used GPT-5.6 before making that model-specific claim.
-- [ ] If GPT-5.6 is confirmed, align the Hero badge, cover, README, video narration, and submission copy from `GPT-5` to `GPT-5.6`.
+- [x] Verify the core build Session model as GPT-5.6 Sol from its recorded `turn_context` history.
+- [x] Align the Hero badge, cover, README, video narration, and submission copy to `GPT-5.6 Sol`.
 - [ ] Choose and add an appropriate repository license before public judging.
 - [ ] Confirm that the repository is public, or share the private repository with the official judging addresses.
 - [ ] Confirm that the live website and `/demo` are publicly reachable without credentials.
@@ -95,11 +95,11 @@ Codex worked as an active product and engineering collaborator across the full d
 
 The project preserves these decisions in its Git history and documentation rather than presenting Codex as a one-off code generator.
 
-### GPT-5.6 usage statement — use only after verification
+### GPT-5.6 Sol usage statement
 
-> The core SmeAIHub experience was built with GPT-5.6 through Codex as an active product and engineering collaborator. GPT-5.6 supported product reasoning, interaction design, implementation planning, code iteration, debugging, review, and submission preparation. The current public diagnosis runtime remains deterministic; the next product milestone will use the OpenAI Responses API and Structured Outputs for live, explainable reports.
+> The core SmeAIHub experience was built with GPT-5.6 Sol through Codex as an active product and engineering collaborator. GPT-5.6 Sol supported product reasoning, interaction design, implementation planning, code iteration, debugging, review, and submission preparation. The current public diagnosis runtime remains deterministic; the next product milestone will use the OpenAI Responses API and Structured Outputs for live, explainable reports.
 
-If the `/feedback` record does not confirm GPT-5.6, do not paste this paragraph. Use the verified model name and explain the result honestly.
+The local Codex Session record identifies the current task as `019f7dce-ba9d-7da2-8433-0f1e496f2ba7` and records `gpt-5.6-sol` for every saved turn context. Confirm the same identifier through `/feedback` before pasting it into Devpost.
 
 ### Challenges we encountered
 
@@ -185,7 +185,7 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - [ ] Project works from the public website.
 - [ ] Public Demo completes without unintended email or analytics test data.
 - [ ] YouTube video is public, under three minutes, and has intelligible audio.
-- [ ] Video audio accurately covers verified Codex and GPT-5.6 usage.
+- [x] Video audio accurately covers verified Codex and GPT-5.6 Sol usage.
 - [ ] Repository access and license satisfy the official requirements.
 - [ ] README includes setup instructions and explains how Codex accelerated the build.
 - [ ] `/feedback` Session ID is correct.
@@ -194,4 +194,3 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - [ ] Category is Work & Productivity.
 - [ ] Final preview has no placeholders.
 - [ ] Submission is completed before July 21, 2026 at 5:00 PM PDT.
-

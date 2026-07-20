@@ -35,7 +35,7 @@ export function Hero() {
       <Container className="grid items-center gap-12 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-20 lg:py-28">
         <div className="max-w-xl lg:pl-8">
           <Badge className="mb-6">
-            Built with OpenAI GPT-5
+            Built with OpenAI GPT-5.6 Sol
           </Badge>
 
           <h1 className="max-w-2xl text-[3.25rem] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-6xl">

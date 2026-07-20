@@ -51,9 +51,9 @@ The Build Week prototype delivers a complete diagnosis journey:
 
 [Watch the 1 minute 40 second Build Week product demo](./public/submission/smeaihub-build-week-demo.mp4) · [Download captions](./public/submission/smeaihub-build-week-demo.srt)
 
-## OpenAI and GPT-5
+## OpenAI, GPT-5.6 Sol, and Codex
 
-SmeAIHub was designed and built with **GPT-5 through Codex** as an active product and engineering collaborator. GPT-5 supported product positioning, information architecture, interaction design, implementation planning, code iteration, review, and submission preparation.
+SmeAIHub was designed and built with **GPT-5.6 Sol through Codex** as an active product and engineering collaborator. GPT-5.6 Sol supported product positioning, information architecture, interaction design, implementation planning, code iteration, review, and submission preparation.
 
 The current public diagnosis prototype uses a deterministic, industry-specific recommendation layer. It does **not** send submitted business information to an OpenAI model at runtime. This keeps the Build Week demo predictable, reviewable, and privacy-conscious while the product workflow is validated.
 

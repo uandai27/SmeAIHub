@@ -168,7 +168,7 @@ Highlights:
 **Added**
 
 - Added a 1440 × 1000 Build Week Hero screenshot.
-- Captured the GPT-5 positioning, primary CTA, AI capability highlights, product dashboard, and AI opportunity snapshot in one submission-ready frame.
+- Captured the GPT-5.6 Sol positioning, primary CTA, AI capability highlights, product dashboard, and AI opportunity snapshot in one submission-ready frame.
 - Saved the reusable asset at `public/submission/hero-build-week.jpg` for README, cover design, and demo-video use.
 
 #### Step 2 — AI Diagnosis Results Screenshot
@@ -185,7 +185,7 @@ Highlights:
 **Added**
 
 - Added a 1200 × 630 Build Week submission cover using the official brand mark and authentic AI Diagnosis Results.
-- Added a clear five-second product story covering the audience, product value, supported industries, and OpenAI GPT-5 positioning.
+- Added a clear five-second product story covering the audience, product value, supported industries, and OpenAI GPT-5.6 Sol positioning.
 - Configured the cover as the default Open Graph and Twitter summary image.
 - Saved the reusable asset at `public/submission/build-week-cover.jpg`.
 
@@ -196,7 +196,7 @@ Highlights:
 - Replaced the default Next.js README with a complete Build Week product narrative.
 - Added the submission cover, homepage screenshot, and AI Diagnosis Results screenshot.
 - Documented the problem, product flow, current capabilities, architecture, technology, local setup, quality checks, and roadmap.
-- Added a transparent OpenAI section that distinguishes GPT-5/Codex-assisted development from the current deterministic runtime prototype.
+- Added a transparent OpenAI section that distinguishes GPT-5.6 Sol/Codex-assisted development from the current deterministic runtime prototype.
 - Documented the planned OpenAI Responses API and Structured Outputs integration without overstating current repository capabilities.
 
 #### Step 5 — Demo Video Planning and Script
@@ -211,7 +211,7 @@ Highlights:
 
 **Clarified**
 
-- Described GPT-5 through Codex as a build-time product and engineering collaborator.
+- Described GPT-5.6 Sol through Codex as a build-time product and engineering collaborator.
 - Described the current diagnosis runtime as deterministic and industry-specific.
 - Positioned the OpenAI Responses API and Structured Outputs as the next runtime milestone.
 - Kept the actual Demo video marked as pending until recording and final export are complete.
@@ -250,5 +250,18 @@ Highlights:
 
 - The final Demo must be uploaded as a public, under-three-minute YouTube video.
 - The submission must include a primary Codex `/feedback` Session ID.
-- GPT-5.6 usage must be verified before updating model-specific claims across the product and submission assets.
+- GPT-5.6 Sol usage must be verified from the Codex Session record before updating model-specific claims across the product and submission assets.
+
+#### Step 2 — GPT-5.6 Sol Evidence and Positioning
+
+**Verified**
+
+- Verified `gpt-5.6-sol` in every saved turn context for the primary Build Week Codex Session.
+- Identified the local Session ID as `019f7dce-ba9d-7da2-8433-0f1e496f2ba7`, pending confirmation through `/feedback` before Devpost submission.
+
+**Updated**
+
+- Standardized the product Hero, README, submission package, video script, and submission documentation on GPT-5.6 Sol.
+- Regenerated the Hero screenshot, Build Week cover, Demo Video, narration, and captions with the verified model name.
+- Preserved the distinction between GPT-5.6 Sol/Codex-assisted development and the current deterministic diagnosis runtime.
 - The repository requires an explicit license choice and confirmed public or judge access.

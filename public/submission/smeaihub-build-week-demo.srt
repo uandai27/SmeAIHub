@@ -20,7 +20,7 @@ Harbor Table receives an AI readiness score of 84, prioritized opportunities, pl
 
 6
 00:01:12,000 --> 00:01:27,000
-SmeAIHub was designed and built with GPT-5 through Codex. The current prototype uses deterministic industry recommendations for a predictable, privacy-conscious demo.
+SmeAIHub was designed and built with GPT-5.6 Sol through Codex. The current prototype uses deterministic industry recommendations for a predictable, privacy-conscious demo.
 
 7
 00:01:27,000 --> 00:01:40,000
