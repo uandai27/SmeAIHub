@@ -1,3 +1,20 @@
+## 2026-07-20
+
+### Milestone 5 — OpenAI Build Week Submission
+
+**Submitted**
+
+- Submitted SmeAIHub to OpenAI Build Week on Devpost.
+- Published the public project page:
+  https://devpost.com/software/smeaihub
+- Included the public Demo, GitHub repository, YouTube video, project screenshots, and primary Codex Session ID.
+- Selected the Work & Productivity category.
+- Confirmed public judge access to the website, Demo, repository, README, and MIT License.
+
+**Status**
+
+- OpenAI Build Week submission: Complete
+- Devpost project: Public
 # v0.5.0 (In Progress)
 
 ## Added
