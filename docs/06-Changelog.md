@@ -160,3 +160,13 @@ Highlights:
 - Desktop browser review: Passed at 1440 px
 - Mobile browser review: Passed at 390 px
 - Browser console: No errors or warnings
+
+### Milestone 5.3 — Submission Assets
+
+#### Step 1 — Hero Screenshot
+
+**Added**
+
+- Added a 1440 × 1000 Build Week Hero screenshot.
+- Captured the GPT-5 positioning, primary CTA, AI capability highlights, product dashboard, and AI opportunity snapshot in one submission-ready frame.
+- Saved the reusable asset at `public/submission/hero-build-week.jpg` for README, cover design, and demo-video use.
