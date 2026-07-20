@@ -164,64 +164,61 @@ export function BusinessDiagnosisForm() {
   }
 
   async function handleSubmit(
-  event: FormEvent<HTMLFormElement>,
-) {
-  event.preventDefault();
+    event: FormEvent<HTMLFormElement>,
+  ) {
+    event.preventDefault();
 
-  const formData = new FormData(event.currentTarget);
-  const nextErrors = validateForm(formData);
+    const formData = new FormData(event.currentTarget);
+    const nextErrors = validateForm(formData);
 
-  setErrors(nextErrors);
-  setIsSubmitted(false);
+    setErrors(nextErrors);
+    setIsSubmitted(false);
 
-  if (Object.keys(nextErrors).length > 0) {
-    window.requestAnimationFrame(() => {
-      focusFirstInvalidField(nextErrors);
-    });
+    if (Object.keys(nextErrors).length > 0) {
+      window.requestAnimationFrame(() => {
+        focusFirstInvalidField(nextErrors);
+      });
 
-    return;
-  }
+      return;
+    }
 
-  setSubmittedBusinessType(
-  String(formData.get("businessType") ?? ""),
-);
+    setSubmittedBusinessType(
+      String(formData.get("businessType") ?? ""),
+    );
 
-  setIsThinking(true);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsThinking(true);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    const payload = Object.fromEntries(formData.entries());
+    try {
+      const payload = Object.fromEntries(formData.entries());
 
-    const response = await fetch(
-      "/api/business-diagnosis",
-      {
+      const response = await fetch("/api/business-diagnosis", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
-      },
-    );
+      });
 
-    if (!response.ok) {
-      throw new Error("Request failed.");
+      if (!response.ok) {
+        throw new Error("Request failed.");
+      }
+
+      setIsSubmitted(true);
+      trackDiagnosisLead();
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        "Something went wrong. Please try again in a few minutes.",
+      );
+    } finally {
+      setIsThinking(false);
+      setIsSubmitting(false);
     }
-
-    setIsSubmitted(true);
-    trackDiagnosisLead();
-  } catch (error) {
-    console.error(error);
-
-    alert(
-      "Something went wrong. Please try again in a few minutes.",
-    );
-  } finally {
-  setIsThinking(false);
-  setIsSubmitting(false);
-}
-}
+  }
 
   function handleStartAnotherDiagnosis() {
     setErrors({});
@@ -229,18 +226,20 @@ export function BusinessDiagnosisForm() {
     setSubmittedBusinessType("");
   }
 
-if (isThinking) {
-  return <BusinessDiagnosisThinking />;
-}  
-if (isSubmitted) {
+  if (isThinking) {
+    return <BusinessDiagnosisThinking />;
+  }
+
+  if (isSubmitted) {
+    return (
+      <AIDiagnosisResults
+        businessType={submittedBusinessType}
+        onStartAnotherDiagnosis={handleStartAnotherDiagnosis}
+      />
+    );
+  }
+
   return (
-    <AIDiagnosisResults
-      businessType={submittedBusinessType}
-      onStartAnotherDiagnosis={handleStartAnotherDiagnosis}
-    />
-  );
-}
-return (
     <form
       ref={formRef}
       className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10"
@@ -555,39 +554,21 @@ return (
         </label>
       </div>
 
-      {isSubmitted && (
-  <div
-    className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm leading-6 text-emerald-800"
-    role="status"
-  >
-    <p className="font-semibold">
-      Your AI Business Diagnosis request has been received.
-    </p>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-full bg-neutral-950 px-8 text-base font-semibold tracking-tight text-white transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      >
+        {isSubmitting
+          ? "Generating..."
+          : "Generate My AI Growth Report"}
 
-    <p className="mt-1">
-      Our team will review your business and contact you within one
-      business day.
-    </p>
-  </div>
-)}
-
-<button
-  type="submit"
-  disabled={isSubmitting || isSubmitted}
-  className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-full bg-neutral-950 px-8 text-base font-semibold tracking-tight text-white transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
->
-  {isSubmitted
-    ? "✓ Request Sent"
-    : isSubmitting
-      ? "Generating..."
-      : "Generate My AI Growth Report"}
-
-  {!isSubmitting && !isSubmitted && (
-    <span className="ml-2" aria-hidden="true">
-      →
-    </span>
-  )}
-</button>
+        {!isSubmitting && (
+          <span className="ml-2" aria-hidden="true">
+            →
+          </span>
+        )}
+      </button>
 
       <p className="mt-4 max-w-2xl text-xs leading-5 text-neutral-500">
         By submitting this request, you agree that SmeAIHub may

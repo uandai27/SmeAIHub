@@ -85,13 +85,13 @@ export function AIDiagnosisResults({
         </p>
 
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
-  Here&apos;s what AI found for your {businessType.toLowerCase()} business
-</h2>
+          Here&apos;s what AI found for your {businessType.toLowerCase()} business
+        </h2>
 
         <p className="mt-3 max-w-xl text-sm leading-6 text-neutral-600 sm:text-base">
-  Based on your business profile, we identified practical AI opportunities
-  across customer experience, operations, and growth.
-</p>
+          Based on your business profile, we identified practical AI
+          opportunities across customer experience, operations, and growth.
+        </p>
       </div>
 
       <div className="mt-8 rounded-3xl bg-neutral-950 p-6 text-white sm:p-8">
@@ -114,9 +114,9 @@ export function AIDiagnosisResults({
 
         <div className="mt-6 h-2 overflow-hidden rounded-full bg-white/10">
           <div
-  className="h-full rounded-full bg-white"
-  style={{ width: `${result.score}%` }}
-/>
+            className="h-full rounded-full bg-white"
+            style={{ width: `${result.score}%` }}
+          />
         </div>
       </div>
 
