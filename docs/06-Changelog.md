@@ -188,3 +188,13 @@ Highlights:
 - Added a clear five-second product story covering the audience, product value, supported industries, and OpenAI GPT-5 positioning.
 - Configured the cover as the default Open Graph and Twitter summary image.
 - Saved the reusable asset at `public/submission/build-week-cover.jpg`.
+
+#### Step 4 — README Submission Edition
+
+**Improved**
+
+- Replaced the default Next.js README with a complete Build Week product narrative.
+- Added the submission cover, homepage screenshot, and AI Diagnosis Results screenshot.
+- Documented the problem, product flow, current capabilities, architecture, technology, local setup, quality checks, and roadmap.
+- Added a transparent OpenAI section that distinguishes GPT-5/Codex-assisted development from the current deterministic runtime prototype.
+- Documented the planned OpenAI Responses API and Structured Outputs integration without overstating current repository capabilities.

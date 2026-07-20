@@ -94,6 +94,7 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Hero screenshot
 - [x] Diagnosis results screenshot
 - [x] Open Graph and submission cover image
+- [x] README submission edition
 - [ ] Demo video
 
 ### ⏳ 5.4 Submission Package
@@ -102,5 +103,4 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [ ] Product description
 - [ ] OpenAI usage explanation
 - [ ] Architecture overview
-- [ ] README submission edition
 - [ ] Final submission review
