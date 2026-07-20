@@ -198,3 +198,20 @@ Highlights:
 - Documented the problem, product flow, current capabilities, architecture, technology, local setup, quality checks, and roadmap.
 - Added a transparent OpenAI section that distinguishes GPT-5/Codex-assisted development from the current deterministic runtime prototype.
 - Documented the planned OpenAI Responses API and Structured Outputs integration without overstating current repository capabilities.
+
+#### Step 5 — Demo Video Planning and Script
+
+**Added**
+
+- Added a production-ready storyboard for a two-minute Build Week demo video.
+- Added an exact voiceover script covering the problem, product flow, diagnosis result, OpenAI usage, and product vision.
+- Added fictional Restaurant demo data with expected personalized result values.
+- Added safe local recording guidance that avoids test lead delivery, analytics events, personal data, and secrets.
+- Added recording, editing, and acceptance checklists for a consistent 1080p submission.
+
+**Clarified**
+
+- Described GPT-5 through Codex as a build-time product and engineering collaborator.
+- Described the current diagnosis runtime as deterministic and industry-specific.
+- Positioned the OpenAI Responses API and Structured Outputs as the next runtime milestone.
+- Kept the actual Demo video marked as pending until recording and final export are complete.

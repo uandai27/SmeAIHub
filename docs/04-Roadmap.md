@@ -95,6 +95,7 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Diagnosis results screenshot
 - [x] Open Graph and submission cover image
 - [x] README submission edition
+- [x] Demo video planning and script
 - [ ] Demo video
 
 ### ⏳ 5.4 Submission Package
