@@ -223,6 +223,12 @@ export function BusinessDiagnosisForm() {
 }
 }
 
+  function handleStartAnotherDiagnosis() {
+    setErrors({});
+    setIsSubmitted(false);
+    setSubmittedBusinessType("");
+  }
+
 if (isThinking) {
   return <BusinessDiagnosisThinking />;
 }  
@@ -230,6 +236,7 @@ if (isSubmitted) {
   return (
     <AIDiagnosisResults
       businessType={submittedBusinessType}
+      onStartAnotherDiagnosis={handleStartAnotherDiagnosis}
     />
   );
 }

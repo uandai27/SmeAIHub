@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Check,
   Clock3,
+  RotateCcw,
   Sparkles,
   TrendingUp,
 } from "lucide-react";
@@ -62,13 +63,15 @@ const industryResults: Record<
 
 type AIDiagnosisResultsProps = {
   businessType: string;
+  onStartAnotherDiagnosis: () => void;
 };
 
 export function AIDiagnosisResults({
   businessType,
+  onStartAnotherDiagnosis,
 }: AIDiagnosisResultsProps) {
-    const result =
-  industryResults[businessType] ?? industryResults.default;
+  const result =
+    industryResults[businessType] ?? industryResults.default;
 
   return (
     <div className="mx-auto w-full max-w-2xl rounded-3xl border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-200/60 sm:p-8 lg:p-10">
@@ -82,13 +85,13 @@ export function AIDiagnosisResults({
         </p>
 
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
-          Here&apos;s what AI found
-        </h2>
+  Here&apos;s what AI found for your {businessType.toLowerCase()} business
+</h2>
 
         <p className="mt-3 max-w-xl text-sm leading-6 text-neutral-600 sm:text-base">
-          Your business shows strong potential for practical AI automation
-          across customer experience, operations, and growth.
-        </p>
+  Based on your business profile, we identified practical AI opportunities
+  across customer experience, operations, and growth.
+</p>
       </div>
 
       <div className="mt-8 rounded-3xl bg-neutral-950 p-6 text-white sm:p-8">
@@ -186,6 +189,15 @@ export function AIDiagnosisResults({
           <ArrowRight className="ml-2 h-4 w-4" />
         </a>
       </div>
+
+      <button
+        type="button"
+        onClick={onStartAnotherDiagnosis}
+        className="mx-auto mt-6 flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-neutral-600 transition hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+      >
+        <RotateCcw className="h-4 w-4" aria-hidden="true" />
+        Start Another Diagnosis
+      </button>
     </div>
   );
 }
