@@ -1,6 +1,31 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import {
+  Bot,
+  Clock3,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
+
+const heroHighlights = [
+  {
+    icon: Sparkles,
+    text: "GPT-powered Business Diagnosis",
+  },
+  {
+    icon: Bot,
+    text: "Industry-specific AI Agents",
+  },
+  {
+    icon: TrendingUp,
+    text: "Personalized Automation Roadmap",
+  },
+  {
+    icon: Clock3,
+    text: "Ready in under 2 minutes",
+  },
+];
 
 export function Hero() {
   return (
@@ -8,26 +33,40 @@ export function Hero() {
       <Container className="grid items-center gap-12 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-20 lg:py-28">
         <div className="max-w-xl lg:pl-8">
           <Badge className="mb-6">
-            AI agents for modern service businesses
+            Built with OpenAI GPT-5
           </Badge>
 
           <h1 className="max-w-2xl text-[3.25rem] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-6xl">
-            Turn every customer conversation into business growth.
+            AI Agents for Service Businesses. Restaurants. Hotels. Spas.
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
-            SmeAIHub helps restaurants, hotels, spas, and service businesses
-            understand customer feedback, respond across languages, and convert
-            more conversations into bookings.
+            Diagnose your business, identify AI opportunities, and deploy
+            intelligent workflows in minutes.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href="/demo">Get a Free AI Diagnosis</Button>
+            <Button href="/demo">Start Free AI Diagnosis</Button>
 
             <Button href="/demo" variant="secondary">
-              Book a Demo
+              See How It Works
             </Button>
           </div>
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+  {heroHighlights.map(({ icon: Icon, text }) => (
+    <div
+      key={text}
+      className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+    >
+      <Icon
+        className="h-4 w-4 shrink-0"
+        aria-hidden="true"
+      />
+
+      <span>{text}</span>
+    </div>
+  ))}
+</div>
         </div>
 
         <div className="rounded-3xl border border-neutral-200 bg-neutral-950 p-4 shadow-2xl shadow-neutral-200">
