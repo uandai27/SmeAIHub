@@ -92,7 +92,7 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 ### ⏳ 5.3 Submission Assets
 
 - [x] Hero screenshot
-- [ ] Diagnosis results screenshot
+- [x] Diagnosis results screenshot
 - [ ] Open Graph and submission cover image
 - [ ] Demo video
 

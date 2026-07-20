@@ -170,3 +170,12 @@ Highlights:
 - Added a 1440 × 1000 Build Week Hero screenshot.
 - Captured the GPT-5 positioning, primary CTA, AI capability highlights, product dashboard, and AI opportunity snapshot in one submission-ready frame.
 - Saved the reusable asset at `public/submission/hero-build-week.jpg` for README, cover design, and demo-video use.
+
+#### Step 2 — AI Diagnosis Results Screenshot
+
+**Added**
+
+- Added a 1200 × 1036 AI Diagnosis Results screenshot.
+- Captured the restaurant-specific diagnosis, AI readiness score, top opportunities, business-impact metrics, and recommended next steps.
+- Used the API honeypot path to render the authentic result flow without sending an email or creating a test lead.
+- Saved the reusable asset at `public/submission/ai-diagnosis-results.jpg`.
