@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { BusinessDiagnosisForm } from "@/components/demo/business-diagnosis-form";
+import { DiagnosisExperience } from "@/components/demo/diagnosis-experience";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Container } from "@/components/ui/container";
@@ -33,10 +32,11 @@ export default function DemoPage() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-neutral-600">
-  Answer a few questions and receive a personalized AI opportunity
-  assessment tailored to your business. Our team will identify practical
-  ways AI can improve operations, customer experience, and business growth.
-</p>
+                Answer a few questions and receive a personalized AI
+                opportunity assessment tailored to your business. Our team
+                will identify practical ways AI can improve operations,
+                customer experience, and business growth.
+              </p>
 
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-500">
                 <span>No commitment</span>
@@ -51,59 +51,7 @@ export default function DemoPage() {
 
         <section className="bg-neutral-50">
           <Container className="py-12 sm:py-16">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-16">
-              <BusinessDiagnosisForm />
-              <aside className="lg:pt-8">
-                <div className="rounded-3xl bg-neutral-950 p-7 text-white sm:p-8">
-                  <p className="text-sm font-medium text-neutral-400">
-                    What you will receive
-                  </p>
-
-                  <h2 className="mt-3 text-2xl font-semibold tracking-tight">
-                    A practical AI opportunity review.
-                  </h2>
-
-                  <ul className="mt-7 space-y-4">
-  {[
-    "Personalized AI opportunity review",
-    "Industry-specific recommendations",
-    "Practical automation ideas",
-    "Delivered within one business day",
-    "No obligation",
-  ].map((benefit) => (
-    <li
-      key={benefit}
-      className="flex items-start gap-3 text-sm leading-6 text-neutral-300"
-    >
-      <span
-        className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-neutral-950"
-        aria-hidden="true"
-      >
-        ✓
-      </span>
-
-      <span>{benefit}</span>
-    </li>
-  ))}
-</ul>
-
-<p className="mt-7 border-t border-white/15 pt-6 text-sm leading-6 text-neutral-400">
-  Every recommendation is reviewed by our team before delivery.
-</p>
-                </div>
-
-                <p className="mt-6 text-sm leading-6 text-neutral-500">
-                  Prefer a general conversation?{" "}
-                  <Link
-                    href="mailto:hello@smeaihub.ai"
-                    className="font-medium text-neutral-950 underline underline-offset-4"
-                  >
-                    Email SmeAIHub
-                  </Link>
-                  .
-                </p>
-              </aside>
-            </div>
+            <DiagnosisExperience />
           </Container>
         </section>
       </main>

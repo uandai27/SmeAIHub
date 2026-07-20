@@ -42,12 +42,20 @@ type FieldName =
 
 type FieldErrors = Partial<Record<FieldName, string>>;
 
+export type DiagnosisPhase = "form" | "thinking" | "results";
+
 const baseInputClassName =
   "min-h-12 w-full rounded-xl border bg-white px-4 text-base text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:ring-2";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function BusinessDiagnosisForm() {
+type BusinessDiagnosisFormProps = {
+  onPhaseChange: (phase: DiagnosisPhase) => void;
+};
+
+export function BusinessDiagnosisForm({
+  onPhaseChange,
+}: BusinessDiagnosisFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -186,6 +194,7 @@ export function BusinessDiagnosisForm() {
       String(formData.get("businessType") ?? ""),
     );
 
+    onPhaseChange("thinking");
     setIsThinking(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -207,9 +216,11 @@ export function BusinessDiagnosisForm() {
       }
 
       setIsSubmitted(true);
+      onPhaseChange("results");
       trackDiagnosisLead();
     } catch (error) {
       console.error(error);
+      onPhaseChange("form");
 
       alert(
         "Something went wrong. Please try again in a few minutes.",
@@ -224,6 +235,7 @@ export function BusinessDiagnosisForm() {
     setErrors({});
     setIsSubmitted(false);
     setSubmittedBusinessType("");
+    onPhaseChange("form");
   }
 
   if (isThinking) {
