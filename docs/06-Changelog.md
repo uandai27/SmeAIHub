@@ -102,3 +102,33 @@ Highlights:
 - ESLint passed
 - TypeScript passed
 - Production build passed
+# Changelog
+
+## 2026-07-19
+
+### Milestone 5.1 — OpenAI Build Week Submission
+
+#### Step 2 — Hero Highlights
+
+**Added**
+
+- Added AI capability highlights beneath the Hero call-to-action section.
+- Introduced four key product value indicators:
+  - GPT-powered Business Diagnosis
+  - Industry-specific AI Agents
+  - Personalized Automation Roadmap
+  - Ready in under 2 minutes
+- Added Lucide icons to improve readability and visual scanning.
+- Implemented responsive grid layout for desktop and mobile devices.
+
+**Improved**
+
+- Strengthened Hero messaging for OpenAI Build Week.
+- Reinforced AI-first product positioning without changing the overall page structure.
+- Improved user understanding of the platform's core capabilities within the first screen.
+
+**Quality**
+
+- ESLint: Passed
+- TypeScript: Passed
+- Production Build: Passed

@@ -7,6 +7,8 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import { HeroAnalysisCard } from "./hero-analysis-card";
+
 
 const heroHighlights = [
   {
@@ -69,6 +71,8 @@ export function Hero() {
 </div>
         </div>
 
+<div className="relative">
+  <HeroAnalysisCard />
         <div className="rounded-3xl border border-neutral-200 bg-neutral-950 p-4 shadow-2xl shadow-neutral-200">
           <div className="rounded-2xl border border-white/10 bg-neutral-900 p-6 text-white">
             <div className="flex items-center justify-between border-b border-white/10 pb-5">
@@ -127,6 +131,7 @@ export function Hero() {
             <p className="mt-4 text-xs text-neutral-500">Product preview</p>
           </div>
         </div>
+</div>
       </Container>
     </section>
   );
