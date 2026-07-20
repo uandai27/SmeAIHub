@@ -5,7 +5,8 @@
 - Project: SmeAIHub
 - Recommended category: Work & Productivity
 - Official deadline: July 21, 2026 at 5:00 PM PDT
-- Package status: Copy complete; external submission requirements remain
+- Package status: Submitted and publicly available
+- Public submission: https://devpost.com/software/smeaihub
 - Submission platform: [OpenAI Build Week on Devpost](https://openai.devpost.com/)
 
 ## Required Pre-Submission Actions
@@ -172,6 +173,7 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 - Public YouTube Demo: https://youtu.be/iRyJbM6pD50
 - Primary Codex `/feedback` Session ID: `019f7dce-ba9d-7da2-8433-0f1e496f2ba7`
 - Supporting Codex `/feedback` Session ID: `019f7ae7-a301-7353-a184-8654f31b5034`
+- Devpost submission: https://devpost.com/software/smeaihub
 
 ## Media Checklist
 
@@ -184,14 +186,15 @@ Longer term, SmeAIHub will become a workspace where service businesses can move 
 ## Final Review Checklist
 
 - [x] Project works from the public website.
-- [ ] Public Demo completes without unintended email or analytics test data.
+- [x] Public Demo completes successfully with production email delivery and consent-controlled analytics.
 - [x] YouTube video is public, under three minutes, and has intelligible audio.
 - [x] Video audio accurately covers verified Codex and GPT-5.6 Sol usage.
-- [x] Repository access and license satisfy the official requirements.
+- [x] Repository access and MIT License satisfy the official requirements.
 - [x] README includes setup instructions and explains how Codex accelerated the build.
 - [x] `/feedback` Session ID is correct.
 - [x] All prepared Devpost links open without authentication.
-- [ ] Submission copy does not overstate the current deterministic runtime.
-- [ ] Category is Work & Productivity.
-- [ ] Final preview has no placeholders.
-- [ ] Submission is completed before July 21, 2026 at 5:00 PM PDT.
+- [x] Submission copy accurately distinguishes GPT-5.6 Sol and Codex-assisted development from the deterministic public diagnosis runtime.
+- [x] Category is Work & Productivity.
+- [x] Final preview has no placeholders.
+- [x] Submission was completed before July 21, 2026 at 5:00 PM PDT.
+- [x] Public Devpost project is available at https://devpost.com/software/smeaihub.
