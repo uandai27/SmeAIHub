@@ -6,7 +6,7 @@
 
 Built for **OpenAI Build Week 2026**.
 
-[Live website](https://smeaihub.ai) · [Try the AI Business Diagnosis](https://smeaihub.ai/demo) · [View the repository](https://github.com/uandai27/SmeAIHub)
+[Live website](https://smeaihub.ai) · [Try the AI Business Diagnosis](https://smeaihub.ai/demo) · [Watch the Build Week demo](./public/submission/smeaihub-build-week-demo.mp4) · [View the repository](https://github.com/uandai27/SmeAIHub)
 
 ## The problem
 
@@ -46,6 +46,10 @@ The Build Week prototype delivers a complete diagnosis journey:
 ### AI Diagnosis Results
 
 ![SmeAIHub AI Diagnosis Results](./public/submission/ai-diagnosis-results.jpg)
+
+### Demo video
+
+[Watch the 1 minute 40 second Build Week product demo](./public/submission/smeaihub-build-week-demo.mp4) · [Download captions](./public/submission/smeaihub-build-week-demo.srt)
 
 ## OpenAI and GPT-5
 

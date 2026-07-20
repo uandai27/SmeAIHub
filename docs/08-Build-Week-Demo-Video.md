@@ -10,13 +10,19 @@ The video should show the complete journey from the business problem to an indus
 
 ## Production Format
 
-- Target length: 1 minute 50 seconds to 2 minutes
+- Final length: 1 minute 40 seconds
 - Aspect ratio: 16:9
 - Resolution: 1920 × 1080
 - Frame rate: 30 fps
 - Delivery: MP4, H.264
 - Captions: Burned in or included as an accurate caption track
 - Narration: Calm, confident, and conversational
+
+## Final Deliverables
+
+- Video: `public/submission/smeaihub-build-week-demo.mp4`
+- Captions: `public/submission/smeaihub-build-week-demo.srt`
+- Status: Complete
 
 ## Storyboard and Recording Timeline
 
@@ -140,4 +146,3 @@ smeaihub.ai
 - The OpenAI Responses API integration is presented as the next milestone, not as a current capability.
 - No personal data, secrets, test email, or analytics event is exposed.
 - The video ends with the SmeAIHub name, website, and product vision.
-

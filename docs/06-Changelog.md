@@ -215,3 +215,22 @@ Highlights:
 - Described the current diagnosis runtime as deterministic and industry-specific.
 - Positioned the OpenAI Responses API and Structured Outputs as the next runtime milestone.
 - Kept the actual Demo video marked as pending until recording and final export are complete.
+
+#### Step 6 — Final Demo Video
+
+**Added**
+
+- Added a 1 minute 40 second Build Week product demo at `public/submission/smeaihub-build-week-demo.mp4`.
+- Added synchronized English narration and a companion SRT caption file.
+- Presented the complete product story across the problem, Hero, diagnosis form, AI Thinking state, industry-specific results, OpenAI roadmap, and closing vision.
+- Added the final Demo video and captions to the README submission experience.
+
+**Quality**
+
+- Resolution: 1920 × 1080
+- Frame rate: 30 fps
+- Video: H.264
+- Audio: AAC
+- Duration: 1 minute 40 seconds
+- Key-frame visual review: Passed
+- Audio and video stream validation: Passed

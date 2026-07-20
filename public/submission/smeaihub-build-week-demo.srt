@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:14,000
+Service businesses lose valuable time and revenue to repetitive customer questions, fragmented bookings, inconsistent follow-up, and manual operations. But adopting AI still feels too technical for many small and medium-sized teams.
+
+2
+00:00:14,000 --> 00:00:27,000
+SmeAIHub starts with the business, not the technology. It helps service businesses identify practical AI opportunities and understand where automation can create the most value.
+
+3
+00:00:27,000 --> 00:00:40,000
+In this example, Harbor Table is a restaurant with several locations. Its challenge is managing bookings and reservations, with a goal to automate inquiries and improve guest follow-up.
+
+4
+00:00:40,000 --> 00:00:50,000
+SmeAIHub turns that context into a focused diagnosis workflow, matching relevant workflows and preparing actionable recommendations.
+
+5
+00:00:50,000 --> 00:01:12,000
+Harbor Table receives an AI readiness score of 84, prioritized opportunities, plus estimated impact of 31 hours saved each month and a 19 percent growth opportunity.
+
+6
+00:01:12,000 --> 00:01:27,000
+SmeAIHub was designed and built with GPT-5 through Codex. The current prototype uses deterministic industry recommendations for a predictable, privacy-conscious demo.
+
+7
+00:01:27,000 --> 00:01:40,000
+Next: OpenAI Responses API and Structured Outputs for live, explainable reports. Every service business deserves an intelligent workforce.
