@@ -100,8 +100,13 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 
 ### ⏳ 5.4 Submission Package
 
-- [ ] One-line pitch
-- [ ] Product description
-- [ ] OpenAI usage explanation
-- [ ] Architecture overview
+- [x] One-line pitch
+- [x] Product description
+- [x] OpenAI and Codex usage draft
+- [x] Architecture overview
+- [x] Judging-criteria alignment
+- [x] Submission links and media checklist
+- [ ] Verify GPT-5.6 usage and `/feedback` Session ID
+- [ ] Upload public YouTube Demo
+- [ ] Add repository license and confirm judging access
 - [ ] Final submission review

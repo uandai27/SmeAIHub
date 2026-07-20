@@ -234,3 +234,21 @@ Highlights:
 - Duration: 1 minute 40 seconds
 - Key-frame visual review: Passed
 - Audio and video stream validation: Passed
+
+### Milestone 5.4 — Submission Package
+
+#### Step 1 — Devpost Submission Copy
+
+**Added**
+
+- Added a complete Devpost-ready Submission Package with a one-line pitch, short description, category, tags, and long-form project narrative.
+- Added Inspiration, What It Does, How We Built It, Codex Usage, Challenges, Accomplishments, Learnings, and What's Next sections.
+- Added direct alignment with the official technological implementation, design, potential impact, and idea-quality judging criteria.
+- Added official submission requirements, media inventory, links, and final review checklist.
+
+**Identified**
+
+- The final Demo must be uploaded as a public, under-three-minute YouTube video.
+- The submission must include a primary Codex `/feedback` Session ID.
+- GPT-5.6 usage must be verified before updating model-specific claims across the product and submission assets.
+- The repository requires an explicit license choice and confirmed public or judge access.
