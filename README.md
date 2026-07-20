@@ -6,8 +6,7 @@
 
 Built for **OpenAI Build Week 2026**.
 
-[Live website](https://smeaihub.ai) · [Try the AI Business Diagnosis](https://smeaihub.ai/demo) · [Watch the Build Week demo](./public/submission/smeaihub-build-week-demo.mp4) · [View the repository](https://github.com/uandai27/SmeAIHub)
-
+[Live website](https://smeaihub.ai) · [Try the AI Business Diagnosis](https://smeaihub.ai/demo) · [Watch the Build Week demo](https://youtu.be/iRyJbM6pD50) · [View the Devpost submission](https://devpost.com/software/smeaihub) · [View the repository](https://github.com/uandai27/SmeAIHub)
 ## The problem
 
 Small and medium-sized service businesses lose time and revenue to repetitive customer questions, fragmented booking workflows, inconsistent follow-up, and limited operational visibility.
