@@ -93,7 +93,7 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 
 - [x] Hero screenshot
 - [x] Diagnosis results screenshot
-- [ ] Open Graph and submission cover image
+- [x] Open Graph and submission cover image
 - [ ] Demo video
 
 ### ⏳ 5.4 Submission Package

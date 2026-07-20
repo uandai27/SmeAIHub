@@ -49,12 +49,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — AI for Business Growth`,
     description: siteConfig.description,
+    images: [
+      {
+        url: "/submission/build-week-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SmeAIHub — AI Agents for Service Businesses",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — AI for Business Growth`,
     description: siteConfig.description,
+    images: ["/submission/build-week-cover.jpg"],
   },
 
   robots: {

@@ -179,3 +179,12 @@ Highlights:
 - Captured the restaurant-specific diagnosis, AI readiness score, top opportunities, business-impact metrics, and recommended next steps.
 - Used the API honeypot path to render the authentic result flow without sending an email or creating a test lead.
 - Saved the reusable asset at `public/submission/ai-diagnosis-results.jpg`.
+
+#### Step 3 — Build Week Cover and OG Image
+
+**Added**
+
+- Added a 1200 × 630 Build Week submission cover using the official brand mark and authentic AI Diagnosis Results.
+- Added a clear five-second product story covering the audience, product value, supported industries, and OpenAI GPT-5 positioning.
+- Configured the cover as the default Open Graph and Twitter summary image.
+- Saved the reusable asset at `public/submission/build-week-cover.jpg`.
