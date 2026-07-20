@@ -7,6 +7,8 @@ import {
 } from "react";
 
 import { trackDiagnosisLead } from "@/lib/analytics";
+import { BusinessDiagnosisThinking } from "./ai-thinking";
+import { AIDiagnosisResults } from "./ai-diagnosis-results";
 
 const businessTypes = [
   "Restaurant",
@@ -51,6 +53,9 @@ export function BusinessDiagnosisForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isThinking, setIsThinking] = useState(false);
+  const [submittedBusinessType, setSubmittedBusinessType] =
+  useState("");
 
   function getInputClassName(fieldName: FieldName) {
     const hasError = Boolean(errors[fieldName]);
@@ -177,6 +182,13 @@ export function BusinessDiagnosisForm() {
     return;
   }
 
+  setSubmittedBusinessType(
+  String(formData.get("businessType") ?? ""),
+);
+
+  setIsThinking(true);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   setIsSubmitting(true);
 
   try {
@@ -206,11 +218,22 @@ export function BusinessDiagnosisForm() {
       "Something went wrong. Please try again in a few minutes.",
     );
   } finally {
-    setIsSubmitting(false);
-  }
+  setIsThinking(false);
+  setIsSubmitting(false);
+}
 }
 
+if (isThinking) {
+  return <BusinessDiagnosisThinking />;
+}  
+if (isSubmitted) {
   return (
+    <AIDiagnosisResults
+      businessType={submittedBusinessType}
+    />
+  );
+}
+return (
     <form
       ref={formRef}
       className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10"
