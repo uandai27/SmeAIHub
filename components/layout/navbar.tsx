@@ -7,19 +7,19 @@ import { Container } from "@/components/ui/container";
 const navigation = [
   {
     label: "Solutions",
-    href: "#solutions",
+    href: "/#solutions",
   },
   {
     label: "Industries",
-    href: "#industries",
+    href: "/#industries",
   },
   {
     label: "Pricing",
-    href: "#pricing",
+    href: "/#pricing",
   },
   {
     label: "About",
-    href: "#about",
+    href: "/#about",
   },
 ];
 
@@ -60,7 +60,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Button href="#demo">Book a Demo</Button>
+        <Button href="/demo">Book a Demo</Button>
       </Container>
     </header>
   );

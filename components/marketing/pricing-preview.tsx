@@ -58,7 +58,7 @@ export function PricingPreview() {
             </p>
           </div>
 
-          <Button href="#demo" variant="secondary">
+          <Button href="/demo" variant="secondary">
             Talk to Sales
           </Button>
         </div>
@@ -139,7 +139,7 @@ export function PricingPreview() {
 
               <div className="mt-auto pt-10">
                 <Button
-                  href="#demo"
+                  href="/demo"
                   variant={plan.featured ? "secondary" : "primary"}
                   className={`w-full ${
                     plan.featured

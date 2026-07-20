@@ -22,9 +22,9 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href="#diagnosis">Get a Free AI Diagnosis</Button>
+            <Button href="/demo">Get a Free AI Diagnosis</Button>
 
-            <Button href="#demo" variant="secondary">
+            <Button href="/demo" variant="secondary">
               Book a Demo
             </Button>
           </div>
