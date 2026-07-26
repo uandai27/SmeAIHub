@@ -113,3 +113,33 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 - [x] Confirm the production website and `/demo` are publicly reachable
 - [x] Make the repository public and verify anonymous judge access
 - [ ] Final submission review
+
+# Milestone 6 — AI Deal Room
+
+## Milestone 6.1 — Deal Room Experience Foundation
+
+- Typed pilot deal model
+- Dynamic private deal routes
+- Kazuko Ramenba restaurant pilot
+- Apsaras Tribe Siargao hotel pilot
+- AI executive summary
+- Interactive scope, roadmap, investment, and agreement sections
+- Contract assistant restricted to approved answers
+- Signing control intentionally disabled until production audit requirements are met
+
+## Milestone 6.2 — Secure Agreement
+
+- Deal persistence and admin authoring
+- Expiring, revocable access tokens
+- Signer identity and authority verification
+- Approved contract templates and immutable version snapshots
+- Production e-signature provider
+- Signature event audit log and signed PDF storage
+
+## Milestone 6.3 — Payment and Activation
+
+- Invoice and payment provider integration
+- Bank transfer evidence and manual reconciliation
+- Payment webhooks and idempotent status updates
+- Workspace activation after cleared payment
+- Creator assignment and commission ledger creation
