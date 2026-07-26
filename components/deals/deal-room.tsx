@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import { type Deal, formatCurrency } from "@/lib/deals";
+import { SecureSigningPanel } from "./secure-signing-panel";
 
 type SectionId = "overview" | "scope" | "plan" | "investment" | "agreement";
 
@@ -29,7 +30,19 @@ const sections: { id: SectionId; label: string }[] = [
   { id: "agreement", label: "Agreement" },
 ];
 
-export function DealRoom({ deal }: { deal: Deal }) {
+type SigningContext = {
+  accessToken: string;
+  agreementVersion: number;
+  dealStatus: string;
+};
+
+export function DealRoom({
+  deal,
+  signing,
+}: {
+  deal: Deal;
+  signing?: SigningContext;
+}) {
   const [activeSection, setActiveSection] = useState<SectionId>("overview");
   const [openScope, setOpenScope] = useState<number | null>(0);
   const [question, setQuestion] = useState("");
@@ -343,34 +356,41 @@ export function DealRoom({ deal }: { deal: Deal }) {
                   title="Review first. Sign with confidence."
                   description="The production signing step will lock the final agreement version and record identity, consent, time, and audit events."
                 />
-                <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
-                  <div className="flex gap-4">
-                    <LockKeyhole
-                      className="mt-0.5 size-5 shrink-0 text-amber-700"
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <h3 className="font-semibold text-amber-950">
-                        Secure signing connection is the next milestone
-                      </h3>
-                      <p className="mt-2 text-sm leading-7 text-amber-900/75">
-                        This page is the Deal Room experience foundation. The
-                        signing action remains unavailable until identity
-                        verification, contract version locking, persistent
-                        audit records, and a production e-signature provider
-                        are connected.
-                      </p>
+                {signing ? (
+                  <SecureSigningPanel
+                    accessToken={signing.accessToken}
+                    agreementVersion={signing.agreementVersion}
+                    dealStatus={signing.dealStatus}
+                  />
+                ) : (
+                  <>
+                    <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
+                      <div className="flex gap-4">
+                        <LockKeyhole
+                          className="mt-0.5 size-5 shrink-0 text-amber-700"
+                          aria-hidden="true"
+                        />
+                        <div>
+                          <h3 className="font-semibold text-amber-950">
+                            Preview only
+                          </h3>
+                          <p className="mt-2 text-sm leading-7 text-amber-900/75">
+                            Use the private, expiring signing link issued by
+                            UandWorld LLC to enter the secure signature flow.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  disabled
-                  className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-neutral-200 px-6 py-4 text-sm font-medium text-neutral-500 sm:w-auto"
-                >
-                  Review and sign
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </button>
+                    <button
+                      type="button"
+                      disabled
+                      className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-neutral-200 px-6 py-4 text-sm font-medium text-neutral-500 sm:w-auto"
+                    >
+                      Review and sign
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </button>
+                  </>
+                )}
               </section>
             )}
           </div>

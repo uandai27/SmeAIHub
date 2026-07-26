@@ -129,17 +129,21 @@ Landing Page v1.0 has been completed and released as **v0.4.0**.
 
 ## Milestone 6.2 — Secure Agreement
 
-- Deal persistence and admin authoring
-- Expiring, revocable access tokens
-- Signer identity and authority verification
-- Approved contract templates and immutable version snapshots
-- Production e-signature provider
-- Signature event audit log and signed PDF storage
+- [x] Deal persistence schema
+- [x] Expiring, revocable access tokens
+- [x] Signer identity and authority confirmation
+- [x] Approved contract templates and immutable version snapshots
+- [x] Dropbox Sign embedded signature adapter
+- [x] Verified, idempotent signature event audit log
+- [ ] Configure production Supabase and Dropbox Sign accounts
+- [ ] Upload approved Restaurant and Hotel contract templates
+- [ ] Store the downloadable final signed PDF
 
 ## Milestone 6.3 — Payment and Activation
 
-- Invoice and payment provider integration
-- Bank transfer evidence and manual reconciliation
-- Payment webhooks and idempotent status updates
-- Workspace activation after cleared payment
-- Creator assignment and commission ledger creation
+- [x] Stripe Checkout integration
+- [ ] Bank transfer evidence and manual reconciliation
+- [x] Verified, idempotent payment webhooks
+- [x] Payment-gated deal status transition
+- [ ] Workspace activation after cleared payment
+- [ ] Creator assignment and commission ledger creation
