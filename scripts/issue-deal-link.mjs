@@ -17,11 +17,14 @@ if (!url || !secretKey || !siteUrl) {
 }
 
 async function rest(path, options = {}) {
+  const authenticationHeaders = secretKey.startsWith("eyJ")
+    ? { Authorization: `Bearer ${secretKey}` }
+    : {};
   const response = await fetch(`${url}/rest/v1/${path}`, {
     ...options,
     headers: {
       apikey: secretKey,
-      Authorization: `Bearer ${secretKey}`,
+      ...authenticationHeaders,
       "Content-Type": "application/json",
       ...options.headers,
     },
