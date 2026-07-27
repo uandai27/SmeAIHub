@@ -82,7 +82,7 @@ export const deals: Deal[] = [
     slug: "kazuko-ramenba-pilot",
     reference: "KZR-PILOT-001",
     customer: {
-      name: "Kazuko Ramenba",
+      name: "Kazuko Ramenba Japanese Restaurant",
       location: "Makati, Philippines",
       industry: "Restaurant",
       logo: "/partners/kazuko-ramenba.svg",
@@ -92,7 +92,7 @@ export const deals: Deal[] = [
     summary:
       "A focused 90-day implementation to turn restaurant knowledge into faster guest responses, a reliable inquiry workflow, and a repeatable foundation for customer growth.",
     outcome:
-      "Give the Kazuko team one trusted place to manage restaurant knowledge and customer inquiries while reducing repetitive manual work.",
+      "Give the Kazuko Ramenba team one trusted place to manage restaurant knowledge and customer inquiries while reducing repetitive manual work.",
     pilot: {
       duration: "90 days",
       setupFee: 20000,

@@ -22,7 +22,7 @@ const partners = [
     logo: "/partners/nova-galaxy-village.png",
   },
   {
-    name: "Kazuko Ramenba",
+    name: "Kazuko Ramenba Japanese Restaurant",
     location: "Makati, Philippines",
     category: "Japanese Ramen Restaurant",
     logo: "/partners/kazuko-ramenba.svg",

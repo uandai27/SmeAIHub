@@ -11,22 +11,26 @@ const pilots = [
   {
     slug: "kazuko-ramenba-pilot",
     reference: "KZR-PILOT-001",
-    customer_name: "Kazuko Ramenba",
+    customer_name: "Patton Group OPC",
+    operating_name: "Kazuko Ramenba Japanese Restaurant",
     industry: "Restaurant",
     setup_fee: 20000,
     monthly_fee: 9900,
     currency: "PHP",
-    template_key: "restaurant-founding-pilot-v1",
+    template_key: "restaurant-founding-pilot-v2",
+    version: 2,
   },
   {
     slug: "apsaras-tribe-pilot",
     reference: "APS-PILOT-001",
     customer_name: "Apsaras Tribe Siargao",
+    operating_name: "Apsaras Tribe Siargao",
     industry: "Hotel",
     setup_fee: 50000,
     monthly_fee: 24900,
     currency: "PHP",
     template_key: "hotel-founding-pilot-v1",
+    version: 1,
   },
 ];
 
@@ -69,6 +73,7 @@ for (const pilot of pilots) {
   const snapshot = {
     agreement_type: "SmeAIHub Founding Pilot Agreement",
     customer_name: pilot.customer_name,
+    operating_name: pilot.operating_name,
     industry: pilot.industry,
     setup_fee: pilot.setup_fee,
     monthly_fee: pilot.monthly_fee,
@@ -85,7 +90,7 @@ for (const pilot of pilots) {
     headers: { Prefer: "resolution=ignore-duplicates,return=minimal" },
     body: JSON.stringify({
       deal_id: dealId,
-      version: 1,
+      version: pilot.version,
       template_key: pilot.template_key,
       content_sha256: contentSha256,
       snapshot,

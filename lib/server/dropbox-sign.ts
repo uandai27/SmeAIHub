@@ -37,12 +37,14 @@ function getConfig() {
 async function getContract(context: DealAccessContext) {
   if (
     context.industry !== "Restaurant" ||
-    context.deal_slug !== "kazuko-ramenba-pilot"
+    context.deal_slug !== "kazuko-ramenba-pilot" ||
+    context.agreement_version !== 2
   ) {
     throw new Error("The requested signing document is not configured.");
   }
 
-  const fileName = "kazuko-ramenba-founding-pilot-v1-draft.pdf";
+  const fileName =
+    "patton-group-opc-kazuko-founding-pilot-v2-draft.pdf";
   return {
     bytes: await readFile(
       path.join(process.cwd(), "assets", "contracts", fileName),
