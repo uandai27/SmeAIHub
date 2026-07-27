@@ -37,9 +37,10 @@ export async function POST(request: Request) {
     const eventType = callback.event.event_type;
     const eventTime = callback.event.event_time;
 
-    if (!providerRequestId || !eventType || !eventTime) {
+    if (!eventType || !eventTime) {
       return new Response("Invalid callback data", { status: 400 });
     }
+    if (!providerRequestId) return acknowledged();
 
     const rows = await supabaseRest<Array<{ deal_id: string; id: string }>>({
       path:
