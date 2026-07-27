@@ -99,6 +99,20 @@ alter table public.deal_audit_events enable row level security;
 
 -- No anonymous policies are intentionally defined. All access goes through
 -- server routes using the Supabase secret key.
+revoke all on table public.deals from anon, authenticated;
+revoke all on table public.agreement_versions from anon, authenticated;
+revoke all on table public.deal_access_tokens from anon, authenticated;
+revoke all on table public.signature_requests from anon, authenticated;
+revoke all on table public.payments from anon, authenticated;
+revoke all on table public.deal_audit_events from anon, authenticated;
+
+grant usage on schema public to service_role;
+grant select, insert, update, delete on table public.deals to service_role;
+grant select, insert, update, delete on table public.agreement_versions to service_role;
+grant select, insert, update, delete on table public.deal_access_tokens to service_role;
+grant select, insert, update, delete on table public.signature_requests to service_role;
+grant select, insert, update, delete on table public.payments to service_role;
+grant select, insert, update, delete on table public.deal_audit_events to service_role;
 
 create or replace function public.resolve_deal_access_token(raw_token text)
 returns table (
