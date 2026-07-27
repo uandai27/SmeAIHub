@@ -17,22 +17,22 @@ The public `/deal/[slug]` route is a non-signable preview. Only an expiring
 1. Create a Supabase project.
 2. Run `supabase/migrations/202607260001_deal_signing_and_billing.sql`.
 3. Configure all server variables listed in `.env.example`.
-4. Create one Dropbox Sign template with the signer role `Client` for each
-   industry.
-5. Add the template merge fields expected by
-   `lib/server/dropbox-sign.ts`.
-6. Configure the Dropbox Sign app callback:
+4. Add each approved agreement PDF under `assets/contracts` and map it in
+   `lib/server/dropbox-sign.ts`. The server uploads the approved PDF directly
+   and places signer fields with `form_fields_per_document`; a paid reusable
+   Dropbox Sign template is not required.
+5. Configure the Dropbox Sign app callback:
    `/api/webhooks/dropbox-sign`.
-7. Configure the Stripe webhook:
+6. Configure the Stripe webhook:
    `/api/webhooks/stripe`.
-8. Subscribe the Stripe endpoint to `checkout.session.completed`.
-9. Bootstrap the two approved pilots:
+7. Subscribe the Stripe endpoint to `checkout.session.completed`.
+8. Bootstrap the approved pilots:
 
    ```text
    npm run deal:bootstrap
    ```
 
-10. Issue an expiring private link:
+9. Issue an expiring private link:
 
    ```text
    npm run deal:issue -- kazuko-ramenba-pilot 14
@@ -42,16 +42,9 @@ The public `/deal/[slug]` route is a non-signable preview. Only an expiring
 The raw access token is displayed only once. Store and share it as a sensitive
 business link. The database stores only its SHA-256 hash.
 
-## Required Dropbox Sign merge fields
-
-- `Customer Name`
-- `Setup Fee`
-- `Monthly Fee`
-- `Currency`
-- `Agreement Version`
-- `Signer Title`
-
-Merge-field names are case-sensitive.
+The current Test Mode signing document is configured for Kazuko Ramenba. Add
+and validate a separately approved hotel PDF and field map before enabling the
+Apsaras signing link.
 
 ## State transitions
 

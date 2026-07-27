@@ -1,6 +1,8 @@
 import "server-only";
 
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 import type { DealAccessContext } from "./supabase-rest";
 
@@ -14,7 +16,8 @@ type SignatureRequestResponse = {
   signature_request: {
     signature_request_id: string;
     signatures: Array<{
-      email_address: string;
+      email_address?: string;
+      signer_email_address?: string;
       signature_id: string;
     }>;
   };
@@ -31,17 +34,21 @@ function getConfig() {
   return { apiKey, clientId };
 }
 
-function getTemplateId(industry: DealAccessContext["industry"]) {
-  const templateId =
-    industry === "Restaurant"
-      ? process.env.DROPBOX_SIGN_RESTAURANT_TEMPLATE_ID
-      : process.env.DROPBOX_SIGN_HOTEL_TEMPLATE_ID;
-
-  if (!templateId) {
-    throw new Error(`Dropbox Sign ${industry} template is not configured.`);
+async function getContract(context: DealAccessContext) {
+  if (
+    context.industry !== "Restaurant" ||
+    context.deal_slug !== "kazuko-ramenba-pilot"
+  ) {
+    throw new Error("The requested signing document is not configured.");
   }
 
-  return templateId;
+  const fileName = "kazuko-ramenba-founding-pilot-v1-draft.pdf";
+  return {
+    bytes: await readFile(
+      path.join(process.cwd(), "assets", "contracts", fileName),
+    ),
+    fileName,
+  };
 }
 
 function authorization(apiKey: string) {
@@ -53,16 +60,24 @@ export async function createEmbeddedSignatureRequest(
   signer: Signer,
 ) {
   const { apiKey, clientId } = getConfig();
+  const contract = await getContract(context);
   const form = new FormData();
   form.append("client_id", clientId);
-  form.append("template_ids[]", getTemplateId(context.industry));
+  form.append(
+    "files[0]",
+    new Blob([new Uint8Array(contract.bytes)], { type: "application/pdf" }),
+    contract.fileName,
+  );
+  form.append("title", `${context.customer_name} — SmeAIHub Founding Pilot`);
   form.append("subject", `${context.customer_name} — SmeAIHub Founding Pilot`);
   form.append(
     "message",
     "Please review and sign the approved SmeAIHub Founding Pilot Agreement.",
   );
-  form.append("signers[Client][name]", signer.name);
-  form.append("signers[Client][email_address]", signer.email);
+  form.append("signers[0][name]", signer.name);
+  form.append("signers[0][email_address]", signer.email);
+  form.append("signers[0][order]", "0");
+  form.append("populate_auto_fill_fields", "1");
   form.append(
     "metadata",
     JSON.stringify({
@@ -73,12 +88,89 @@ export async function createEmbeddedSignatureRequest(
     }),
   );
   form.append(
+    "form_fields_per_document",
+    JSON.stringify([
+      [
+        {
+          api_id: "client_signature",
+          name: "Client Signature",
+          type: "signature",
+          x: 315,
+          y: 154,
+          width: 180,
+          height: 32,
+          required: true,
+          signer: 0,
+          page: 5,
+        },
+        {
+          api_id: "client_name",
+          name: "Client Name",
+          type: "text",
+          x: 315,
+          y: 188,
+          width: 185,
+          height: 24,
+          required: true,
+          signer: 0,
+          page: 5,
+          auto_fill_type: "name",
+        },
+        {
+          api_id: "signer_title",
+          name: "Signer Title",
+          type: "text-merge",
+          x: 315,
+          y: 217,
+          width: 185,
+          height: 24,
+          required: true,
+          signer: 0,
+          page: 5,
+        },
+        {
+          api_id: "client_email",
+          name: "Client Email",
+          type: "text",
+          x: 315,
+          y: 246,
+          width: 185,
+          height: 24,
+          required: true,
+          signer: 0,
+          page: 5,
+          auto_fill_type: "email",
+        },
+        {
+          api_id: "date_signed",
+          name: "Date Signed",
+          type: "date_signed",
+          x: 315,
+          y: 275,
+          width: 120,
+          height: 24,
+          required: true,
+          signer: 0,
+          page: 5,
+        },
+        {
+          api_id: "agreement_version",
+          name: "Agreement Version",
+          type: "text-merge",
+          x: 405,
+          y: 305,
+          width: 75,
+          height: 22,
+          required: true,
+          signer: 0,
+          page: 5,
+        },
+      ],
+    ]),
+  );
+  form.append(
     "custom_fields",
     JSON.stringify([
-      { name: "Customer Name", value: context.customer_name },
-      { name: "Setup Fee", value: String(context.setup_fee) },
-      { name: "Monthly Fee", value: String(context.monthly_fee) },
-      { name: "Currency", value: context.currency },
       { name: "Agreement Version", value: String(context.agreement_version) },
       { name: "Signer Title", value: signer.title },
     ]),
@@ -89,7 +181,7 @@ export async function createEmbeddedSignatureRequest(
   }
 
   const response = await fetch(
-    "https://api.hellosign.com/v3/signature_request/create_embedded_with_template",
+    "https://api.hellosign.com/v3/signature_request/create_embedded",
     {
       method: "POST",
       headers: { Authorization: authorization(apiKey) },
@@ -105,7 +197,9 @@ export async function createEmbeddedSignatureRequest(
 
   const request = (await response.json()) as SignatureRequestResponse;
   const signature = request.signature_request.signatures.find(
-    (item) => item.email_address.toLowerCase() === signer.email.toLowerCase(),
+    (item) =>
+      (item.signer_email_address ?? item.email_address)?.toLowerCase() ===
+      signer.email.toLowerCase(),
   );
 
   if (!signature) {
