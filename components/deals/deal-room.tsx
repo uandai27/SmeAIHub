@@ -18,11 +18,18 @@ import {
 } from "lucide-react";
 
 import { type Deal, formatCurrency } from "@/lib/deals";
+import { OnboardingPanel } from "./onboarding-panel";
 import { SecureSigningPanel } from "./secure-signing-panel";
 
-type SectionId = "overview" | "scope" | "plan" | "investment" | "agreement";
+type SectionId =
+  | "overview"
+  | "scope"
+  | "plan"
+  | "investment"
+  | "agreement"
+  | "onboarding";
 
-const sections: { id: SectionId; label: string }[] = [
+const baseSections: { id: SectionId; label: string }[] = [
   { id: "overview", label: "Overview" },
   { id: "scope", label: "Scope" },
   { id: "plan", label: "90-day plan" },
@@ -44,6 +51,9 @@ export function DealRoom({
   signing?: SigningContext;
 }) {
   const [activeSection, setActiveSection] = useState<SectionId>("overview");
+  const [currentDealStatus, setCurrentDealStatus] = useState(
+    signing?.dealStatus ?? "ready_for_review",
+  );
   const [openScope, setOpenScope] = useState<number | null>(0);
   const [question, setQuestion] = useState("");
   const [selectedQuestion, setSelectedQuestion] = useState(
@@ -65,6 +75,14 @@ export function DealRoom({
       }
     );
   }, [deal.questions, selectedQuestion]);
+  const sections = useMemo(
+    () =>
+      ["paid", "onboarding", "active"].includes(currentDealStatus)
+        ? [...baseSections, { id: "onboarding" as const, label: "Onboarding" }]
+        : baseSections,
+    [currentDealStatus],
+  );
+  const status = getStatusPresentation(currentDealStatus, deal.status);
 
   function askQuestion(value: string) {
     const trimmed = value.trim();
@@ -127,9 +145,11 @@ export function DealRoom({
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-800">
-              <span className="size-1.5 rounded-full bg-emerald-500" />
-              {deal.status}
+            <span
+              className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium ${status.className}`}
+            >
+              <span className={`size-1.5 rounded-full ${status.dotClassName}`} />
+              {status.label}
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-xs text-neutral-600">
               <Clock3 className="size-3.5" aria-hidden="true" />
@@ -360,7 +380,7 @@ export function DealRoom({
                   <SecureSigningPanel
                     accessToken={signing.accessToken}
                     agreementVersion={signing.agreementVersion}
-                    dealStatus={signing.dealStatus}
+                    dealStatus={currentDealStatus}
                   />
                 ) : (
                   <>
@@ -391,6 +411,22 @@ export function DealRoom({
                     </button>
                   </>
                 )}
+              </section>
+            )}
+
+            {activeSection === "onboarding" && signing && (
+              <section aria-labelledby="onboarding-title">
+                <SectionHeading
+                  eyebrow="Customer onboarding"
+                  title="Give the delivery team what it needs to begin."
+                  description="Submit the primary contact, approved brand information, menu or service knowledge, and source links in one secure place."
+                />
+                <OnboardingPanel
+                  accessToken={signing.accessToken}
+                  customerName={deal.customer.name}
+                  dealStatus={currentDealStatus}
+                  onSubmitted={() => setCurrentDealStatus("onboarding")}
+                />
               </section>
             )}
           </div>
@@ -472,6 +508,48 @@ export function DealRoom({
       </div>
     </main>
   );
+}
+
+function getStatusPresentation(status: string, fallback: string) {
+  switch (status) {
+    case "signature_requested":
+      return {
+        label: "Signature requested",
+        className: "border-amber-200 bg-amber-50 text-amber-800",
+        dotClassName: "bg-amber-500",
+      };
+    case "signed":
+    case "awaiting_payment":
+      return {
+        label: "Awaiting payment",
+        className: "border-blue-200 bg-blue-50 text-blue-800",
+        dotClassName: "bg-blue-500",
+      };
+    case "paid":
+      return {
+        label: "Payment confirmed",
+        className: "border-emerald-200 bg-emerald-50 text-emerald-800",
+        dotClassName: "bg-emerald-500",
+      };
+    case "onboarding":
+      return {
+        label: "Onboarding submitted",
+        className: "border-violet-200 bg-violet-50 text-violet-800",
+        dotClassName: "bg-violet-500",
+      };
+    case "active":
+      return {
+        label: "Active",
+        className: "border-emerald-200 bg-emerald-50 text-emerald-800",
+        dotClassName: "bg-emerald-500",
+      };
+    default:
+      return {
+        label: fallback,
+        className: "border-emerald-200 bg-emerald-50 text-emerald-800",
+        dotClassName: "bg-emerald-500",
+      };
+  }
 }
 
 function Metric({ label, value }: { label: string; value: string }) {
