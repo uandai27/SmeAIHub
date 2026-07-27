@@ -25,11 +25,14 @@ export async function supabaseRest<T>({
   path,
 }: RestOptions): Promise<T> {
   const { secretKey, url } = getConfiguration();
+  const authenticationHeaders: Record<string, string> = secretKey.startsWith("eyJ")
+    ? { Authorization: `Bearer ${secretKey}` }
+    : {};
   const response = await fetch(`${url}/rest/v1/${path}`, {
     method,
     headers: {
       apikey: secretKey,
-      Authorization: `Bearer ${secretKey}`,
+      ...authenticationHeaders,
       "Content-Type": "application/json",
       ...headers,
     },
