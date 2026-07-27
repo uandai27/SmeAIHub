@@ -11,6 +11,17 @@ type SecureSigningPanelProps = {
 
 type Phase = "form" | "creating" | "signing" | "signed" | "payment";
 
+async function readJsonResponse<T>(response: Response): Promise<T> {
+  const body = await response.text();
+  if (!body) return {} as T;
+
+  try {
+    return JSON.parse(body) as T;
+  } catch {
+    return {} as T;
+  }
+}
+
 export function SecureSigningPanel({
   accessToken,
   agreementVersion,
@@ -38,12 +49,12 @@ export function SecureSigningPanel({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ accessToken, ...signer }),
       });
-      const result = (await response.json()) as {
+      const result = await readJsonResponse<{
         clientId?: string;
         error?: string;
         signUrl?: string;
         testMode?: boolean;
-      };
+      }>(response);
       if (!response.ok || !result.clientId || !result.signUrl) {
         throw new Error(result.error ?? "Secure signing is unavailable.");
       }
@@ -82,10 +93,10 @@ export function SecureSigningPanel({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ accessToken }),
       });
-      const result = (await response.json()) as {
+      const result = await readJsonResponse<{
         error?: string;
         url?: string;
-      };
+      }>(response);
       if (!response.ok || !result.url) {
         throw new Error(
           result.error ??

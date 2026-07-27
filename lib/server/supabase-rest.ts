@@ -50,7 +50,12 @@ export async function supabaseRest<T>({
     return undefined as T;
   }
 
-  return (await response.json()) as T;
+  const responseBody = await response.text();
+  if (!responseBody) {
+    return undefined as T;
+  }
+
+  return JSON.parse(responseBody) as T;
 }
 
 export type DealAccessContext = {
