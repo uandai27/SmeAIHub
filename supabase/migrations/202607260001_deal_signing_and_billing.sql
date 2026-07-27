@@ -134,7 +134,7 @@ as $$
 begin
   update public.deal_access_tokens
   set last_used_at = now()
-  where token_hash = encode(digest(raw_token, 'sha256'), 'hex')
+  where token_hash = encode(extensions.digest(raw_token, 'sha256'), 'hex')
     and revoked_at is null
     and expires_at > now();
 
@@ -159,7 +159,7 @@ begin
     order by agreement_versions.version desc
     limit 1
   ) av on true
-  where dat.token_hash = encode(digest(raw_token, 'sha256'), 'hex')
+  where dat.token_hash = encode(extensions.digest(raw_token, 'sha256'), 'hex')
     and dat.revoked_at is null
     and dat.expires_at > now();
 end;
