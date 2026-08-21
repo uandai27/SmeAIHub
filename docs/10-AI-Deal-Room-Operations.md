@@ -7,7 +7,7 @@ The secure agreement workflow depends on:
 - Supabase for private deal state, locked agreement versions, access tokens,
   signature records, payment records, and audit events.
 - Dropbox Sign for embedded electronic signatures and final signature evidence.
-- Stripe Checkout for the implementation payment and recurring monthly fee.
+- Stripe Checkout for the one-time initial implementation payment.
 
 The public `/deal/[slug]` route is a non-signable preview. Only an expiring
 `/sign/[token]` route can initiate signing.
@@ -61,6 +61,15 @@ ready_for_review
 The server rejects Checkout creation until Dropbox Sign has confirmed the
 agreement. The application marks a payment as paid only after a verified Stripe
 webhook; the browser return URL is never treated as proof of payment.
+
+The initial Checkout Session is a one-time payment for 50% of the implementation
+fee. The remaining 50% is due before production go-live. Monthly billing begins
+only on the production go-live date.
+
+This Stripe account also processes payments outside SmeAIHub. Valid account-level
+`checkout.session.completed` events without `metadata.deal_id` are acknowledged
+with HTTP 200 and ignored. Invoice and subscription events are needed only when
+recurring billing is enabled at production go-live.
 
 ## Security controls
 

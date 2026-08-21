@@ -16,24 +16,18 @@ export async function createCheckoutSession(
   returnUrl: string,
 ) {
   const parameters = new URLSearchParams({
-    mode: "subscription",
+    mode: "payment",
     customer_email: signerEmail,
     success_url: `${returnUrl}?payment=success`,
     cancel_url: `${returnUrl}?payment=canceled`,
     "metadata[deal_id]": context.deal_id,
     "metadata[deal_slug]": context.deal_slug,
+    "metadata[payment_stage]": "initial_implementation",
     "line_items[0][price_data][currency]": context.currency.toLowerCase(),
     "line_items[0][price_data][product_data][name]":
-      `${context.customer_name} — SmeAIHub implementation`,
-    "line_items[0][price_data][unit_amount]": String(context.setup_fee * 100),
+      `${context.customer_name} — Initial implementation payment`,
+    "line_items[0][price_data][unit_amount]": String(context.setup_fee * 50),
     "line_items[0][quantity]": "1",
-    "line_items[1][price_data][currency]": context.currency.toLowerCase(),
-    "line_items[1][price_data][product_data][name]":
-      `${context.customer_name} — SmeAIHub monthly platform`,
-    "line_items[1][price_data][unit_amount]": String(context.monthly_fee * 100),
-    "line_items[1][price_data][recurring][interval]": "month",
-    "line_items[1][quantity]": "1",
-    "subscription_data[metadata][deal_id]": context.deal_id,
   });
 
   const response = await fetch("https://api.stripe.com/v1/checkout/sessions", {

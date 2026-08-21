@@ -36,7 +36,7 @@ export type Deal = {
     duration: string;
     setupFee: number;
     monthlyFee: number;
-    currency: "PHP";
+    currency: "PHP" | "USD";
     firstPayment: number;
   };
   scope: DealScopeItem[];
@@ -50,7 +50,7 @@ const sharedQuestions: DealQuestion[] = [
   {
     question: "When does the monthly fee begin?",
     answer:
-      "The first monthly platform fee is included in the initial payment. Future monthly fees are due on the same billing date while the pilot remains active.",
+      "Monthly service begins on the production go-live date. The initial payment covers 50% of the implementation fee and does not include a monthly service fee.",
     reference: "Commercial terms · Billing",
     keywords: ["monthly", "month", "fee", "billing", "payment", "pay"],
   },
@@ -95,10 +95,10 @@ export const deals: Deal[] = [
       "Give the Kazuko Ramenba team one trusted place to manage restaurant knowledge and customer inquiries while reducing repetitive manual work.",
     pilot: {
       duration: "90 days",
-      setupFee: 20000,
-      monthlyFee: 9900,
-      currency: "PHP",
-      firstPayment: 29900,
+      setupFee: 3500,
+      monthlyFee: 499,
+      currency: "USD",
+      firstPayment: 1750,
     },
     scope: [
       {
@@ -191,10 +191,10 @@ export const deals: Deal[] = [
       "Help the Apsaras team answer guests consistently from discovery through arrival while preserving human service for important requests.",
     pilot: {
       duration: "90 days",
-      setupFee: 50000,
-      monthlyFee: 24900,
-      currency: "PHP",
-      firstPayment: 74900,
+      setupFee: 4500,
+      monthlyFee: 699,
+      currency: "USD",
+      firstPayment: 2250,
     },
     scope: [
       {

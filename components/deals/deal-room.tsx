@@ -334,7 +334,7 @@ export function DealRoom({
                 <SectionHeading
                   eyebrow="Founding pilot investment"
                   title="Simple pricing for a focused 90-day engagement."
-                  description="The initial payment includes implementation and the first month of platform access."
+                  description="The initial payment is 50% of the implementation fee. Monthly service begins on the production go-live date."
                 />
                 <div className="mt-8 overflow-hidden rounded-3xl border border-neutral-200 bg-white">
                   <PriceRow
@@ -353,7 +353,7 @@ export function DealRoom({
                         Initial payment after signing
                       </p>
                       <p className="mt-2 text-sm text-neutral-300">
-                        Implementation + first month
+                        50% of implementation fee
                       </p>
                     </div>
                     <p className="text-4xl font-semibold tracking-tight">

@@ -66,9 +66,7 @@ export async function POST(request: Request) {
       body: {
         deal_id: context.deal_id,
         provider_session_id: session.id,
-        amount:
-          session.amount_total ??
-          (context.setup_fee + context.monthly_fee) * 100,
+        amount: session.amount_total ?? context.setup_fee * 50,
         currency: session.currency ?? context.currency.toLowerCase(),
       },
     });

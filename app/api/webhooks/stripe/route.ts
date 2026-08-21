@@ -8,7 +8,7 @@ type StripeEvent = {
       currency?: string;
       customer?: string;
       id?: string;
-      metadata?: { deal_id?: string };
+      metadata?: { deal_id?: string; payment_stage?: string };
       payment_status?: string;
       subscription?: string;
       status?: string;
@@ -32,8 +32,13 @@ export async function POST(request: Request) {
     if (event.type === "checkout.session.completed") {
       const dealId = object?.metadata?.deal_id;
       const sessionId = object?.id;
-      if (!event.id || !dealId || !sessionId) {
+      if (!event.id || !sessionId) {
         return new Response("Invalid event data", { status: 400 });
+      }
+      if (!dealId) {
+        return new Response("Ignored unrelated Checkout Session", {
+          status: 200,
+        });
       }
 
       await supabaseRest({
@@ -66,6 +71,7 @@ export async function POST(request: Request) {
         eventId: event.id,
         eventType: event.type,
         payload: {
+          payment_stage: object.metadata?.payment_stage,
           payment_status: object.payment_status,
           provider_session_id: sessionId,
           provider_subscription_id: object.subscription,
