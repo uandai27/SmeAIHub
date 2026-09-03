@@ -276,10 +276,10 @@ export function getDeal(slug: string) {
   return deals.find((deal) => deal.slug === slug);
 }
 
-export function formatCurrency(amount: number) {
-  return new Intl.NumberFormat("en-PH", {
+export function formatCurrency(amount: number, currency: string) {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "PHP",
+    currency,
     maximumFractionDigits: 0,
   }).format(amount);
 }
