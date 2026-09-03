@@ -37,7 +37,7 @@ export async function createCheckoutSession(
       Authorization: `Bearer ${getStripeSecret()}`,
       "Content-Type": "application/x-www-form-urlencoded",
       "Idempotency-Key":
-        `deal-${context.deal_id}-agreement-${context.agreement_version_id}-checkout`,
+        `deal-${context.deal_id}-agreement-${context.agreement_version_id}-checkout-initial-implementation-v2`,
     },
     body: parameters,
     cache: "no-store",
