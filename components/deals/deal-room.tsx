@@ -83,6 +83,14 @@ export function DealRoom({
     [currentDealStatus],
   );
   const status = getStatusPresentation(currentDealStatus, deal.status);
+  const agreementMetaText = ["paid", "onboarding", "active"].includes(
+  currentDealStatus,
+)
+  ? "Agreement active"
+  : ["signed", "awaiting_payment"].includes(currentDealStatus) &&
+      deal.signedAt
+    ? `Signed ${deal.signedAt}`
+    : `Valid until ${deal.validUntil}`;
 
   function askQuestion(value: string) {
     const trimmed = value.trim();
@@ -153,7 +161,7 @@ export function DealRoom({
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-xs text-neutral-600">
               <Clock3 className="size-3.5" aria-hidden="true" />
-              Valid until {deal.validUntil}
+              {agreementMetaText}
             </span>
           </div>
         </div>

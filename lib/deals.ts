@@ -30,6 +30,7 @@ export type Deal = {
   };
   status: "Ready for review";
   validUntil: string;
+  signedAt?: string;
   summary: string;
   outcome: string;
   pilot: {
@@ -183,8 +184,9 @@ export const deals: Deal[] = [
       industry: "Hotel",
       logo: "/partners/apsaras-tribe.png",
     },
-    status: "Ready for review",
+        status: "Ready for review",
     validUntil: "August 15, 2026",
+    signedAt: "August 21, 2026",
     summary:
       "A 90-day hotel implementation that organizes guest-facing knowledge, improves booking inquiries, and creates a practical AI-assisted guest experience workflow.",
     outcome:
