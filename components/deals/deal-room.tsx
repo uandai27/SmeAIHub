@@ -209,7 +209,10 @@ export function DealRoom({
                     <Metric label="Pilot" value={deal.pilot.duration} />
                     <Metric
                       label="Initial investment"
-                      value={formatCurrency(deal.pilot.firstPayment)}
+                      value={formatCurrency(
+                        deal.pilot.firstPayment,
+                        deal.pilot.currency,
+                      )}
                     />
                   </div>
                 </div>
@@ -340,12 +343,18 @@ export function DealRoom({
                   <PriceRow
                     label="One-time implementation"
                     detail="Diagnosis, knowledge, workflow, configuration, testing, and training"
-                    value={formatCurrency(deal.pilot.setupFee)}
+                    value={formatCurrency(
+                      deal.pilot.setupFee,
+                      deal.pilot.currency,
+                    )}
                   />
                   <PriceRow
                     label="Monthly platform & optimization"
                     detail="Platform access, monitoring, knowledge updates, and monthly review"
-                    value={`${formatCurrency(deal.pilot.monthlyFee)} / month`}
+                    value={`${formatCurrency(
+                      deal.pilot.monthlyFee,
+                      deal.pilot.currency,
+                    )} / month`}
                   />
                   <div className="flex flex-col gap-4 bg-neutral-950 p-6 text-white sm:flex-row sm:items-end sm:justify-between sm:p-8">
                     <div>
@@ -357,7 +366,10 @@ export function DealRoom({
                       </p>
                     </div>
                     <p className="text-4xl font-semibold tracking-tight">
-                      {formatCurrency(deal.pilot.firstPayment)}
+                      {formatCurrency(
+                        deal.pilot.firstPayment,
+                        deal.pilot.currency,
+                      )}
                     </p>
                   </div>
                 </div>

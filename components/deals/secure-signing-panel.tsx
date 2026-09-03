@@ -131,8 +131,8 @@ export function SecureSigningPanel({
           Signature completed
         </h3>
         <p className="mt-2 text-sm leading-7 text-emerald-900/75">
-          Dropbox Sign is confirming the final signature event. Once confirmed,
-          you can continue to secure payment.
+          Your signed agreement has been confirmed. You can continue to secure
+          payment.
         </p>
         <button
           type="button"
