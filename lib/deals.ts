@@ -88,8 +88,9 @@ export const deals: Deal[] = [
       industry: "Restaurant",
       logo: "/partners/kazuko-ramenba.svg",
     },
-    status: "Ready for review",
+        status: "Ready for review",
     validUntil: "August 15, 2026",
+    signedAt: "August 26, 2026",
     summary:
       "A focused 90-day implementation to turn restaurant knowledge into faster guest responses, a reliable inquiry workflow, and a repeatable foundation for customer growth.",
     outcome:
