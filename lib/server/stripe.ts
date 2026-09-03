@@ -17,6 +17,7 @@ export async function createCheckoutSession(
 ) {
   const parameters = new URLSearchParams({
     mode: "payment",
+    "managed_payments[enabled]": "false",
     customer_email: signerEmail,
     success_url: `${returnUrl}?payment=success`,
     cancel_url: `${returnUrl}?payment=canceled`,
