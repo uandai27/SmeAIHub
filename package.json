@@ -9,7 +9,8 @@
     "deal:bootstrap": "node scripts/bootstrap-pilot-deals.mjs",
     "deal:issue": "node scripts/issue-deal-link.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-loader=./tests/alias-loader.mjs --test --test-concurrency=1 tests/*.test.mts"
   },
   "dependencies": {
     "hellosign-embedded": "^2.12.3",

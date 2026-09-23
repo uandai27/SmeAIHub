@@ -3,6 +3,7 @@ import "server-only";
 type RestOptions = {
   body?: unknown;
   headers?: Record<string, string>;
+  logErrorDetail?: boolean;
   method?: "GET" | "POST" | "PATCH";
   path: string;
 };
@@ -21,6 +22,7 @@ function getConfiguration() {
 export async function supabaseRest<T>({
   body,
   headers,
+  logErrorDetail = true,
   method = "GET",
   path,
 }: RestOptions): Promise<T> {
@@ -42,7 +44,11 @@ export async function supabaseRest<T>({
 
   if (!response.ok) {
     const detail = await response.text();
-    console.error(`Supabase REST request failed (${response.status}):`, detail);
+    if (logErrorDetail) {
+      console.error(`Supabase REST request failed (${response.status}):`, detail);
+    } else {
+      console.error(`Supabase REST request failed (${response.status}).`);
+    }
     throw new Error("The signing service could not save or retrieve data.");
   }
 
