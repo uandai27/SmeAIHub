@@ -1,0 +1,13 @@
+import Link from 'next/link';
+import { portalClients, portalFetch, requirePortalUser } from '@/lib/server/client-portal';
+import { dashboardPath } from '@/lib/portal/validation';
+import { logout } from '@/app/login/actions';
+export const dynamic = 'force-dynamic';
+export const metadata = { title: 'Client Workspaces', robots: { index: false, follow: false } };
+export default async function Clients({ searchParams }: { searchParams: Promise<{notice?: string}> }) {
+  const user = await requirePortalUser();
+  let clients: Awaited<ReturnType<typeof portalClients>> = [], admin = false, unavailable = false;
+  try { [clients, admin] = await Promise.all([portalClients(), portalFetch<boolean>('rest/v1/rpc/portal_is_admin', user.token, {})]); } catch { unavailable = true; }
+  const { notice } = await searchParams;
+  return <main className="min-h-screen bg-slate-50 px-5 py-10 text-slate-900"><div className="mx-auto max-w-5xl"><header className="flex flex-wrap items-center justify-between gap-4"><Link href="/" className="font-semibold text-emerald-800">SmeAIHub</Link><form action={logout}><button className="rounded-xl border bg-white px-4 py-2">Sign out</button></form></header><h1 className="mt-10 text-3xl font-semibold">Your business workspaces</h1><p className="mt-3 text-sm text-slate-600">{user.email}</p>{notice === 'denied' && <p role="alert" className="mt-5 rounded-xl bg-amber-50 p-4 text-amber-900">You do not have access to that workspace.</p>}{unavailable ? <p role="alert" className="mt-6">Workspace access is unavailable. Contact your administrator to check the connection and client portal migration.</p> : clients.length ? <div className="mt-8 grid gap-5 sm:grid-cols-2">{clients.map(client => { const path = dashboardPath(client.dashboard_slug); return <article key={client.tenant_slug} className="rounded-2xl border border-slate-200 bg-white p-6"><p className="text-sm text-slate-500">{client.industry} · {client.role.replaceAll('_', ' ')}</p><h2 className="mt-3 text-xl font-semibold">{client.name}</h2><p className="mt-3 text-sm text-slate-600">{client.integration_status === 'connected' ? 'Operations data connected' : 'Business data integration pending'}</p>{path && <Link href={path} prefetch={false} className="mt-5 inline-block rounded-xl bg-emerald-800 px-4 py-2 text-white">Open workspace</Link>}</article>; })}</div> : <p className="mt-8 rounded-xl border bg-white p-5">No client access has been assigned to your account. Contact your administrator.</p>}{admin && <Link href="/clients/admin" className="mt-8 inline-block text-emerald-800 underline">Manage client members</Link>}</div></main>;
+}
