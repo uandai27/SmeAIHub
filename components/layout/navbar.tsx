@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="flex w-full items-center justify-end gap-3 sm:w-auto">
           <Link
-            href="/operations/kazuko"
+            href="/login"
             prefetch={false}
             className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-950"
           >

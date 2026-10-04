@@ -8,6 +8,16 @@ type RestOptions = {
   path: string;
 };
 
+export class SupabaseRestError extends Error {
+  readonly status: number;
+  readonly code?: string;
+  constructor(status: number, code?: string) {
+    super('The database request failed.');
+    this.status = status;
+    this.code = code;
+  }
+}
+
 function getConfiguration() {
   const url = process.env.SUPABASE_URL;
   const secretKey = process.env.SUPABASE_SECRET_KEY;
@@ -49,7 +59,9 @@ export async function supabaseRest<T>({
     } else {
       console.error(`Supabase REST request failed (${response.status}).`);
     }
-    throw new Error("The signing service could not save or retrieve data.");
+    let code: string | undefined;
+    try { code = (JSON.parse(detail) as { code?: string }).code; } catch { /* Non-JSON gateway response. */ }
+    throw new SupabaseRestError(response.status, code);
   }
 
   if (response.status === 204) {
