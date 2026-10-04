@@ -4,6 +4,8 @@
 
 Private `/operations/kazuko` page reads existing WhatsApp message and service-request records. Reporting supports 7/30-day Manila-date windows and previous-period message/request/arrival counts. Revenue is recorded bills for arrived reservations whose requests were created within the selected period: it is not POS revenue, revenue by visit date, or incremental AI sales. Today's data is incomplete. Historical records before instrumentation are not a verified baseline.
 
+The public website header includes **Client Login**, pointing to `/operations/kazuko`. It is visible on desktop and mobile and opens the existing private access screen; it does not create individual customer accounts or multi-tenant routing. The demo booking CTA remains available beside it.
+
 The all-date work queue supports owner assignment, notes, review, staff confirmation, arrival, cancellation and handoff resolution. Staff must contact guests separately. Arrival bills may be added/corrected; blank keeps an existing amount, zero is a recorded zero. Closing a delivery exception records manual resolution without sending a message. Processing messages require engineering investigation.
 
 Updates use atomic RPCs with row locks, optimistic timestamps and an audit trail. Writes require an authenticated operations session, including direct server-action invocation. No database calls occur for unauthenticated reads. There are no sample records in production code. Read failures display unavailable metrics rather than zero totals.

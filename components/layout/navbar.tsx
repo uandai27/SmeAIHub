@@ -26,7 +26,7 @@ const navigation = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex min-h-16 flex-wrap items-center justify-between gap-3 py-3 sm:h-16 sm:flex-nowrap sm:py-0">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-xl tracking-[-0.03em] text-neutral-950 transition-opacity hover:opacity-80"
@@ -48,7 +48,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
           {navigation.map((item) => (
             <Link
               key={item.label}
@@ -60,7 +60,16 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Button href="/demo">Book a Demo</Button>
+        <div className="flex w-full items-center justify-end gap-3 sm:w-auto">
+          <Link
+            href="/operations/kazuko"
+            prefetch={false}
+            className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-950"
+          >
+            Client Login
+          </Link>
+          <Button href="/demo">Book a Demo</Button>
+        </div>
       </Container>
     </header>
   );
