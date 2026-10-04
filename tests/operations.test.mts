@@ -29,3 +29,12 @@ test('Manila midnight boundaries and distinct guests use message records without
   assert.equal(summarize(messages, []).replies, 1);
   assert.deepEqual(dailyVolume(messages, ['2026-10-03','2026-10-04']), [{day:'2026-10-03',count:1},{day:'2026-10-04',count:1}]);
 });
+test('website bookings contribute to reservation outcomes without inventing WhatsApp message volume', () => {
+  const request = { intake_source: 'web', request_type: 'reservation', status: 'pending_staff_confirmation', sale_amount_php: null } as RequestRow;
+  const result = summarize([], [request]);
+  assert.equal(result.reservations, 1);
+  assert.equal(result.messages, 0);
+  assert.equal(result.guests, 0);
+  assert.equal(result.arrived, 0);
+  assert.equal(result.revenue, null);
+});

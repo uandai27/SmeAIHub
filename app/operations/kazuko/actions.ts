@@ -5,6 +5,23 @@ import { revalidatePath } from 'next/cache';
 import { COOKIE_NAME, OPERATIONS_PATH, requireOperationsSession } from '@/lib/server/kazuko-operations';
 import { issueSession, matchesToken, SESSION_SECONDS } from '@/lib/operations/session';
 import { supabaseRest } from '@/lib/server/supabase-rest';
+import { KAZUKO_WEB_SYNC_URL, signWebSync } from '@/lib/operations/web-sync';
+export async function syncWebsiteRequests() {
+  await requireOperationsSession();
+  const secret = process.env.SUPABASE_SECRET_KEY;
+  if (!secret) redirect(`${OPERATIONS_PATH}?notice=website_unavailable`);
+  const { body, signature } = signWebSync(secret);
+  let notice = 'website_unavailable';
+  try {
+    const response = await fetch(KAZUKO_WEB_SYNC_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-kazuko-sync-signature': signature }, body, signal: AbortSignal.timeout(20_000), cache: 'no-store' });
+    if (response.ok) {
+      const result = await response.json() as { pending?: unknown; failed?: unknown };
+      if (typeof result.pending === 'number' && typeof result.failed === 'number') notice = result.pending || result.failed ? 'website_pending' : 'website_synced';
+    }
+  } catch { /* Show an honest unavailable notice; saved web requests stay queued. */ }
+  revalidatePath(OPERATIONS_PATH);
+  redirect(`${OPERATIONS_PATH}?notice=${notice}`);
+}
 export async function signIn(form: FormData) {
   const secret = process.env.KAZUKO_OPERATIONS_ACCESS_TOKEN;
   const token = form.get('token');
