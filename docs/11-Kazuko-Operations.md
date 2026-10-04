@@ -19,6 +19,18 @@ Updates use atomic RPCs with row locks, optimistic timestamps and an audit trail
 
 One Kazuko-scoped shared team key creates an 8-hour HttpOnly, SameSite=Strict session, Secure in production. Key rotation invalidates sessions. Self-entered operator names are not verified identities. There are no separate owner/staff/FDE roles or individual revocation yet; this first version is for a small authorized operations group, not payroll access. Do not store or render salary records here until individual identities and management-only roles exist.
 
+## Website reservation synchronization
+
+Apply `supabase/migrations/202610040002_kazuko_web_reservations.sql` after the operations migration. The concierge Site at `https://kazuko-ramenba-concierge.uandworld.chatgpt.site/` needs the same server-only `SUPABASE_URL` and `SUPABASE_SECRET_KEY` as this deployment, configured in Sites production settings. Never use a publishable/anonymous key or place either credential in client code.
+
+The Site retains the original booking in D1 and adds a durable sync record in the same transaction. Each conversation turn attempts up to three queued web bookings. Failed deliveries stay queued with a 30-second backoff; there is no scheduled background retry. Authorized operators can click **Sync website bookings** to import history or retry. This server action signs a short-lived, domain-separated HMAC request to the Site; it never exposes the service key to the browser. The Site rejects unsigned, expired and tampered requests. Rotating the Supabase key requires updating both servers.
+
+The service-role-only ingestion function fixes the tenant to Kazuko, deduplicates by original `KR-...` reference and never overwrites existing owner, note, status or bill. Original creation timestamps are preserved. A replay after a network timeout therefore creates no duplicate. All older D1 `source = web` requests are queued when the Site initializes; historical import does not create WhatsApp staff alerts. The existing employee notification queue remains independent.
+
+Web requests use `intake_source = web` and have no WhatsApp message or sender. They contribute to reservation, arrival and recorded-bill metrics, but not WhatsApp message volume. Original date/time wording is preserved because relative or ambiguous dates cannot safely be converted to a calendar booking without staff confirmation. The work queue covers all dates; period cards use request creation dates, so imported older bookings may only appear in 30-day cards and the all-date queue.
+
+Synchronization is one-way intake, not bidirectional booking management. Staff updates in the operations dashboard do not change the Site's D1 status or send the guest a message. Deleting a D1 booking does not delete its dashboard record. Web handoffs and Green API conversations are outside this web-reservation sync change. Arrival/bills and individual staff roles retain the first-version limitations above.
+
 ## Newly received management PDFs
 
 Hourly sales should go into a private structured financial dataset, not the public concierge knowledge module. The report covers Jan–Sep 2026, with hourly buckets representing each month's bucket totals and an average across months. It is not daily/hourly average sales per operating day. Confirm January zero buckets and the final `23:01–00:00` label before comparing periods. Sales alone do not establish hourly losses; costs, margins, operating days and shift coverage are needed.
