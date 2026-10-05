@@ -4,7 +4,7 @@
 
 The website's Client Login opens `/login`. Employee accounts authenticate against Supabase Auth using email and password. The server stores only the access token in an HttpOnly, Secure-in-production, SameSite cookie. Login is bounded to the smaller of the provider token lifetime and one hour; expired sessions require login again. There is no self-registration, email invitation, password recovery UI or refresh-token storage in this release. Administrators provision and reset Auth accounts in Supabase.
 
-`/clients` lists the businesses assigned to the signed-in user. Kazuko opens the existing operations dashboard. Apsaras opens a protected setup workspace that explicitly reports hotel data as unconnected. No occupancy, hotel bookings or revenue have been fabricated. Future clients require a tenant entry plus their business integration and supported dashboard route; adding an account does not build those integrations automatically.
+`/clients` lists the businesses assigned to the signed-in user. Kazuko opens the restaurant operations dashboard. Apsaras opens its protected guest-enquiry dashboard after migration `202610050001_apsaras_operations.sql` is applied and the public concierge sync secrets are configured. No occupancy, OTA bookings, PMS inventory, payments or hotel revenue are fabricated. Future clients require a tenant entry plus their business integration and supported dashboard route; adding an account does not build those integrations automatically.
 
 Membership is stored in `portal_members`, not browser input or editable Auth metadata. `portal_admins` grants platform-wide administration; client members cannot promote themselves to platform admins. `/clients/admin` can enable, change or disable membership for existing confirmed Auth users. Changes are audited.
 
@@ -12,8 +12,8 @@ Membership is stored in `portal_members`, not browser input or editable Auth met
 |---|---|---|---|---|
 | Viewer | Own assigned clients | No | No | No |
 | Staff | Own assigned clients | Yes | No | No |
-| Manager | Own assigned clients | Yes | Yes | No |
-| Platform admin | All active clients | Yes | Yes | Yes |
+| Manager | Own assigned clients | Yes | Kazuko only | No |
+| Platform admin | All active clients | Yes | Kazuko only | Yes |
 
 Managers do not provision accounts or administer memberships in this release. Staff can see recorded bills and revenue but cannot write bill amounts. Operator email and user ID are derived from the verified account when processing requests; the submitted operator field cannot impersonate another account.
 
@@ -53,4 +53,13 @@ Before the new migration is applied, only the specific missing-RPC error permits
 
 ## Verification
 
-`npm test` includes in-memory PostgreSQL tests that execute all four real migrations and switch between authenticated, anonymous and service roles. The tests cover existing-data preservation, cross-client reads, arbitrary URL/filter attempts, forbidden direct writes, self-promotion, manager-only billing, verified audit identity, membership revocation, service-only/idempotent website ingestion and administrator-only legacy cutover. These tests use synthetic data and do not write to production. Production account login and employee access remain unverified until the activation steps above are completed.
+`npm test` includes in-memory PostgreSQL tests that execute the real migrations and switch between authenticated, anonymous and service roles. The tests cover existing-data preservation, cross-client reads, arbitrary URL/filter attempts, forbidden direct writes, self-promotion, manager-only billing, verified audit identity, membership revocation, service-only/idempotent website ingestion, Apsaras workflow transitions and administrator-only legacy cutover. These tests use synthetic data and do not write to production. Production account login and employee access remain unverified until the activation steps above are completed.
+
+## Apsaras activation
+
+1. Apply `supabase/migrations/202610050001_apsaras_operations.sql` after the client portal migration. This adds the tenant-isolated enquiry table, audit log, service-only ingestion RPC and role-guarded workflow RPC.
+2. Add the same Supabase project's `SUPABASE_URL` and server-only `SUPABASE_SECRET_KEY` to the Apsaras Sites project. Never expose the secret key in browser code. Deploy the Apsaras concierge with its new D1 migration; existing D1 leads and handoffs are queued for backfill.
+3. Create and confirm the hotel manager's Supabase Auth user, then assign that email to `apsaras-tribe` with the Manager role in `/clients/admin`.
+4. Verify a real guest enquiry end to end: public concierge capture, appearance in `/operations/apsaras`, manager assignment, status change and audit identity. Verify a Kazuko-only account cannot read the Apsaras table and an Apsaras-only account cannot open Kazuko.
+
+The Apsaras dashboard reports enquiry volume, booking leads, open follow-ups, urgent handoffs, source mix and staff outcomes. Workflow actions do not send guest messages automatically and do not claim that a room is available or a booking is confirmed until staff explicitly records that outcome.
