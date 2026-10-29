@@ -6,6 +6,10 @@ import { Container } from "@/components/ui/container";
 
 const navigation = [
   {
+    label: "FDE Portfolio",
+    href: "/#portfolio",
+  },
+  {
     label: "Solutions",
     href: "/#solutions",
   },

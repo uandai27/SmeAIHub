@@ -5,6 +5,7 @@ import { CookieSettingsButton } from "@/components/analytics/cookie-settings-but
 import { Container } from "@/components/ui/container";
 
 const navigation = [
+  { name: "FDE Portfolio", href: "/#portfolio" },
   { name: "Solutions", href: "/#solutions" },
   { name: "Industries", href: "/#industries" },
   { name: "Pricing", href: "/#pricing" },
